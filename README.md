@@ -1,36 +1,33 @@
-# Inicijalne upute za prijavu projekta iz Programskog inženjerstva
-
-Poštovane kolegice i kolege, 
-
-čestitamo vam jer ste uspješno prijavili svoj projektni tim na kolegiju Programsko inženjerstvo, te je za vas automatski kreiran repozitorij koji ćete koristiti za verzioniranje vašega koda, ali i za pisanje dokumentacije.
-
-Ovaj dokument (README.md) predstavlja **osobnu iskaznicu vašeg projekta**. Vaš prvi zadatak, ukoliko niste odabrali da želite raditi na projektu sa nastavnicima ili u sklopu WBL-a je **prijaviti vlastiti projektni prijedlog** na način da ćete prijavu vašeg projekta, sukladno uputama danim u ovom tekstu, napisati upravo u ovaj dokument, umjesto ovoga teksta.
-
-Za upute o sintaksi koju možete koristiti u ovom dokumentu i kod pisanje vaše projektne dokumentacije pogledajte [ovaj link](https://guides.github.com/features/mastering-markdown/).
-Sav programski kod potrebno je verzionirati u glavnoj **master** grani i **obvezno** smjestiti u mapu Software. Sve artefakte (npr. slike) koje ćete koristiti u vašoj dokumentaciju obvezno verzionirati u posebnoj grani koja je već kreirana i koja se naziva **master-docs** i smjestiti u mapu Documentation.
-
-Nakon vaše prijave bit će vam dodijeljen mentor s kojim ćete tijekom semestra raditi na ovom projektu. A sada, vrijeme je da prijavite vaš projekt. Za prijavu vašeg projektnog prijedloga molimo vas koristite **predložak** koji je naveden u nastavku, a započnite tako da kliknete na *olovku* u desnom gornjem kutu ovoga dokumenta :) 
-
-# Naziv projekta
-(u redak iznad navedite kratki proizvoljni naziv projekta prikladan akademskoj zajednici, a ovaj tekst obrišite)
+# Bookfriz
 
 ## Projektni tim
 
 Ime i prezime | E-mail adresa (FOI) | JMBAG | Github korisničko ime
 ------------  | ------------------- | ----- | ---------------------
-Ime i prezime | mojaadresa@foi.hr | 000000000 | githubuser
-Ime i prezime | ... | ... | ...
+Ana Horvat | ahorvat3@foi.hr | 0016142576  | rubnikkk
+Petar Martinović | pmartinov@foi.hr | 0016143568 | Petar47
+Augustin Lukić | alukic@foi.hr | 0016141745 | aulukic
+Matej Sitarić | msitaric@foi.hr | 0016141675 | matus-situs
 
 ## Opis domene
-Umjesto ovih uputa opišite domenu ili problem koji pokrivate vašim  projektom. Domena može biti proizvoljna, ali obratite pozornost da sukladno ishodima učenja, domena omogući primjenu zahtijevanih koncepata kako je to navedeno u sljedećem poglavlju. Priložite odgovarajuće skice gdje je to prikladno.
+Namjena Bookfriza je naručivanje na frizerske usluge bez zvanja telefonom. Aplikaciju koriste korisnici (usluge) i frizerski saloni (djelatnici). Preko aplikacije bi bilo moguće odabrati željenu uslugu, željeni salon i slobodni termin te bi se takvim pristupom naručivanje na tu vrstu usluga znatno pojednostavilo. Ne bi bilo problema "zauzete linije" te bi se trošilo manje vremena. Osim naručivanja, u aplikaciji bi bilo moguće vidjeti salone koji se nalaze u blizini korisnika te bi se također vidjele aktualne akcijske ponude u pojedinim salonima. Aplikacija bi slala i obavijesti prije naručenog termina kako korisnik ne bi zaboravio na termin.
 
 ## Specifikacija projekta
-Umjesto ovih uputa opišite zahtjeve za funkcionalnošću programskog proizvoda. Pobrojite osnovne funkcionalnosti i za svaku naznačite ime odgovornog člana tima. Opišite buduću arhitekturu programskog proizvoda. Obratite pozornost da bi arhitektura trebala biti višeslojna s odvojenom (dislociranom) bazom podatka. Također uzmite u obzir da bi svaki član tima treba biti odgovorana za otprilike 3 funkcionalnosti, te da bi opterećenje članova tima trebalo biti ujednačeno. Priložite odgovarajuće dijagrame i skice gdje je to prikladno. Funkcionalnosti sustava bobrojite u tablici ispod koristeći predložak koji slijedi:
 
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
-F01 | Login | Za pristup dnevniku potrebnba je autentikacija korisnika pomoću login funkcionalnosti. Korisnik se logira s podacima koji su mu dodijeljeni prilikom ... | Zlatko Stapić
-F02 | Pregled dnevnika | .... | ...
+F01 | Prijava | Prijava omogućuje prijavu u aplikaciju bilo od strane salona (kojeg zastupa djelatnik salona) ili korisnika.| Ana Horvat
+F02 | Registracija | Registracija omogućuje registraciju novih salona i korisnika u aplikaciju.| Petar Martinović
+F03 | Profil salona i korisnika | Profili salona i korisnika prikazuju najvažnije informacije o salonu/korisniku. Kod salona to su ime, adresa, radno vrijeme, kontakt i popis djelatnika. Kod korisnika to su ime i kontakt.| Ana Horvat
+F04 | Naručivanje (ako je prijavljen korisnik) | Naručivanje može obaviti korisnik tako da prvo odabere željeni salon ili uslugu. Nakon toga ovisno o tome je li odabrao salon ili uslugu dobiva popis salona koji obavljaju uslugu koju je odabrao ili se direktno prikazuju slobodni termini za uslugu u salonu koji je odabrao.| Matej Sitarić
+F05 | Postavljanje cjenika (ako je prijavljen salon)| Cjenik postavlja salon na svoj profil.| Augustin Lukić
+F06 | Tražilica | Omogućuje korisniku pretraživanje prema pojedinim kriterijima ili više njih (pretraživanje prema salonima, uslugama, mjestu i sl.)| Petar Martinović
+F07 | Recenzije salona | Korisnik nakon izvršene usluge može salonu dati recenziju u obliku ocjene (zvijezdice) i opcionalno može upisati kratak tekst kao recenziju.| Matej Sitarić
+F08 | Dodavanje/brisanje/ažuriranje usluga salona | Salon može manipulirati popisom usluga koji nudi te ih može dodavati, brisati i ažurirati.| Augustin Lukić
+F09 | Obavijesti | Korisnik može odabrati koje obavijesti želi dobivati (obavijest nekoliko dana/sati prije termina.| Ana Horvat
+F10 | Popis salona u blizini | Korsnik na karti može vidjeti koji su mu saloni u blizini te ih na taj način može lakše odabrati.| Petar Martinović
+F11 | Popis akcija u salonima | Na početnom zaslonu aplikacije nakon prijave korisnika vidljive su trenutne akcije u salonima.| Matej Sitarić
+F12 | Dodavanje usluga u salonu u favorite | Korisnik, kako bi što bolje personalizirao aplikaciju, može dodavati određene usluge u svoje favorite te si na taj način idući put može olakšati naručivanje.| Augustin Lukić
 
 ## Tehnologije i oprema
-Umjesto ovih uputa jasno popišite sve tehnologije, alate i opremu koju ćete koristiti pri implementaciji vašeg rješenja. Ne zaboravite planirati korištenje tehnologija u aktivnostima kao što su projektni menadžment ili priprema dokumentacije. Tehnologije koje ćete koristiti bi trebale biti javno dostupne, a ako ih ne budemo obrađivali na vježbama u vašoj dokumentaciji ćete morati navesti način preuzimanja, instaliranja i korištenja onih tehnologija koje su neopbodne kako bi se vaš programski proizvod preveo i pokrenuo. Pazite da svi alati koje ćete koristiti moraju imati odgovarajuću licencu.
+.NET (Visual Studio), GitHub, GitHub Classroom, LaTeX, Draw.io, MySQL
