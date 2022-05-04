@@ -25,7 +25,7 @@ F06 | Tražilica | Omogućuje korisniku pretraživanje prema pojedinim kriteriji
 F07 | Recenzije salona | Korisnik nakon izvršene usluge može salonu dati recenziju u obliku ocjene (zvijezdice) i opcionalno može upisati kratak tekst kao recenziju.| Matej Sitarić
 F08 | Dodavanje/brisanje/ažuriranje usluga salona | Salon može manipulirati popisom usluga koji nudi te ih može dodavati, brisati i ažurirati.| Augustin Lukić
 F09 | Obavijesti | Korisnik može odabrati koje obavijesti želi dobivati (obavijest nekoliko dana/sati prije termina.| Ana Horvat
-F10 | Popis salona u blizini | Korsnik na karti može vidjeti koji su mu saloni u blizini te ih na taj način može lakše odabrati.| Petar Martinović
+F10 | Popis salona u blizini | Korsnik može vidjeti koji su mu saloni u blizini te ih na taj način može lakše odabrati.| Petar Martinović
 F11 | Popis akcija u salonima | Na početnom zaslonu aplikacije nakon prijave korisnika vidljive su trenutne akcije u salonima.| Matej Sitarić
 F12 | Dodavanje usluga u salonu u favorite | Korisnik, kako bi što bolje personalizirao aplikaciju, može dodavati određene usluge u svoje favorite te si na taj način idući put može olakšati naručivanje.| Augustin Lukić
 
