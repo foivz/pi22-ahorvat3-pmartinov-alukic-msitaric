@@ -17,7 +17,7 @@ Namjena Bookfriza je naručivanje na frizerske usluge bez zvanja telefonom. Apli
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
 F01 | Prijava | Prijava omogućuje prijavu u aplikaciju bilo od strane salona (kojeg zastupa djelatnik salona) ili korisnika.| Ana Horvat
-F02 | Registracija | Registracija omogućuje registraciju novih salona i korisnika u aplikaciju.| Petar Martinović
+F02 | Registracija | Registracija omogućuje registraciju korisnika u aplikaciju.| Petar Martinović
 F03 | Profil salona i korisnika | Profili salona i korisnika prikazuju najvažnije informacije o salonu/korisniku. Kod salona to su ime, adresa, radno vrijeme, kontakt i popis djelatnika. Kod korisnika to su ime i kontakt.| Ana Horvat
 F04 | Naručivanje (ako je prijavljen korisnik) | Naručivanje može obaviti korisnik tako da prvo odabere željeni salon ili uslugu. Nakon toga ovisno o tome je li odabrao salon ili uslugu dobiva popis salona koji obavljaju uslugu koju je odabrao ili se direktno prikazuju slobodni termini za uslugu u salonu koji je odabrao.| Matej Sitarić
 F05 | Postavljanje cjenika (ako je prijavljen salon)| Cjenik postavlja salon na svoj profil.| Augustin Lukić
