@@ -30,4 +30,4 @@ F11 | Popis akcija u salonima | Na početnom zaslonu aplikacije nakon prijave ko
 F12 | Dodavanje usluga u salonu u favorite | Korisnik, kako bi što bolje personalizirao aplikaciju, može dodavati određene usluge u svoje favorite te si na taj način idući put može olakšati naručivanje.| Augustin Lukić
 
 ## Tehnologije i oprema
-.NET (Visual Studio), GitHub, GitHub Classroom, LaTeX, Draw.io, MySQL
+.NET (Visual Studio), GitHub, GitHub Classroom, Visual Paradigm, Blazor.net
