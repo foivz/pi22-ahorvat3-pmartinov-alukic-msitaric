@@ -43,6 +43,7 @@
             this.radioZensko = new System.Windows.Forms.RadioButton();
             this.radioOstalo = new System.Windows.Forms.RadioButton();
             this.btnOdustani = new System.Windows.Forms.Button();
+            this.btnRegistracija = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtBroj = new System.Windows.Forms.TextBox();
             this.btnSakrijLozinka = new System.Windows.Forms.Button();
@@ -179,11 +180,21 @@
             // 
             this.btnOdustani.Location = new System.Drawing.Point(133, 263);
             this.btnOdustani.Name = "btnOdustani";
-            this.btnOdustani.Size = new System.Drawing.Size(75, 33);
+            this.btnOdustani.Size = new System.Drawing.Size(90, 38);
             this.btnOdustani.TabIndex = 15;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
             this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
+            // 
+            // btnRegistracija
+            // 
+            this.btnRegistracija.Location = new System.Drawing.Point(230, 263);
+            this.btnRegistracija.Name = "btnRegistracija";
+            this.btnRegistracija.Size = new System.Drawing.Size(110, 38);
+            this.btnRegistracija.TabIndex = 0;
+            this.btnRegistracija.Text = "Registriraj se";
+            this.btnRegistracija.UseVisualStyleBackColor = true;
+            this.btnRegistracija.Click += new System.EventHandler(this.btnRegistracija_Click);
             // 
             // label7
             // 
@@ -253,6 +264,7 @@
             this.Controls.Add(this.txtBroj);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnOdustani);
+            this.Controls.Add(this.btnRegistracija);
             this.Controls.Add(this.radioOstalo);
             this.Controls.Add(this.radioZensko);
             this.Controls.Add(this.radioMusko);
