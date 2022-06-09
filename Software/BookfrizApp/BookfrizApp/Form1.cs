@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Registracija_novo;
 
 namespace BookfrizApp
 {
@@ -15,6 +16,12 @@ namespace BookfrizApp
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Registracija registracija = new Registracija();
+            registracija.ShowDialog();
         }
     }
 }
