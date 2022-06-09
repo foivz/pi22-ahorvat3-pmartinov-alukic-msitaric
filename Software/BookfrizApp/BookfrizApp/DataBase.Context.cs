@@ -26,13 +26,7 @@ namespace BookfrizApp
         }
     
         public virtual DbSet<Cjenik> Cjenik { get; set; }
-        public virtual DbSet<Gradd> Gradd { get; set; }
-
-        internal void Dispose()
-        {
-            throw new NotImplementedException();
-        }
-
+        public virtual DbSet<Grad> Grad { get; set; }
         public virtual DbSet<Klijent> Klijent { get; set; }
         public virtual DbSet<Salon> Salon { get; set; }
         public virtual DbSet<Usluga> Usluga { get; set; }

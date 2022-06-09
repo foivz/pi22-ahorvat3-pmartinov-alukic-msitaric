@@ -1,4 +1,4 @@
-﻿namespace Registracija_novo
+﻿namespace BookfrizApp.Forms
 {
     partial class Registracija
     {
@@ -42,7 +42,6 @@
             this.radioMusko = new System.Windows.Forms.RadioButton();
             this.radioZensko = new System.Windows.Forms.RadioButton();
             this.radioOstalo = new System.Windows.Forms.RadioButton();
-            this.btnRegistracija = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtBroj = new System.Windows.Forms.TextBox();
@@ -176,16 +175,6 @@
             this.radioOstalo.Text = "Ostalo";
             this.radioOstalo.UseVisualStyleBackColor = true;
             // 
-            // btnRegistracija
-            // 
-            this.btnRegistracija.Location = new System.Drawing.Point(239, 263);
-            this.btnRegistracija.Name = "btnRegistracija";
-            this.btnRegistracija.Size = new System.Drawing.Size(101, 33);
-            this.btnRegistracija.TabIndex = 14;
-            this.btnRegistracija.Text = "Registriraj se";
-            this.btnRegistracija.UseVisualStyleBackColor = true;
-            this.btnRegistracija.Click += new System.EventHandler(this.btnRegistracija_Click);
-            // 
             // btnOdustani
             // 
             this.btnOdustani.Location = new System.Drawing.Point(133, 263);
@@ -264,7 +253,6 @@
             this.Controls.Add(this.txtBroj);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnOdustani);
-            this.Controls.Add(this.btnRegistracija);
             this.Controls.Add(this.radioOstalo);
             this.Controls.Add(this.radioZensko);
             this.Controls.Add(this.radioMusko);

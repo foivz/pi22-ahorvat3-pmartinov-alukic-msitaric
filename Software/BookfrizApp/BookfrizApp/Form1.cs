@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Registracija_novo;
+using BookfrizApp.Forms;
 
 namespace BookfrizApp
 {
@@ -20,7 +20,7 @@ namespace BookfrizApp
 
         private void btnRegistracija_Click(object sender, EventArgs e)
         {
-            Registracija registracija = new Registracija();
+            Trazilica registracija = new Trazilica();
             registracija.ShowDialog();
         }
     }

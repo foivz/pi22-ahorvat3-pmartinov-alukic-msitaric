@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookfrizApp.Classes;
 
-namespace Registracija_novo
+namespace BookfrizApp.Forms
 {
     public partial class Registracija : Form
     {

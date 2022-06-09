@@ -12,10 +12,10 @@ namespace BookfrizApp
     using System;
     using System.Collections.Generic;
     
-    public partial class Gradd
+    public partial class Grad
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Gradd()
+        public Grad()
         {
             this.Salon = new HashSet<Salon>();
         }

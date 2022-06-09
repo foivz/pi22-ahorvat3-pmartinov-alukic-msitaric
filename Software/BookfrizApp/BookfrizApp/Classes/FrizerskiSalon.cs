@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BookfrizApp.Classes;
 
-namespace Trazilica
+namespace BookfrizApp.Classes
 {
     public class FrizerskiSalon
     {
@@ -14,7 +13,7 @@ namespace Trazilica
         public string Adresa { get; set; }
         public string BrojTelefona { get; set; }
         public string Email { get; set; }
-        public Grad Grad { get; set; }
+        public Gradd Grad { get; set; }
         public FrizerskiSalon()
         {
 

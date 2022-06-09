@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2c98ca4d5b1d4d0cb71bc029966bb86b" Name="Diagram1">
+      <Diagram DiagramId="e30415ad54ce4a15b5784f15ff684bf5" Name="Diagram1">
         <EntityTypeShape EntityType="PI2230_DBModel.Cjenik" Width="1.5" PointX="5.25" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="PI2230_DBModel.Gradd" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2230_DBModel.Grad" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="PI2230_DBModel.Klijent" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PI2230_DBModel.Salon" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="PI2230_DBModel.Usluga" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />

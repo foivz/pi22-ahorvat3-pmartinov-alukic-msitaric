@@ -66,5 +66,77 @@ namespace BookfrizApp.Classes
                 }
             }
         }
+        public Korisnik Korisnik { get; set; }
+        public FrizerskiSalon FrizerskiSalon { get; set; }
+        List<Salon> konacno = new List<Salon>();
+        public void Provjera(List<Salon> salon)
+        {
+            List<Salon> perm = new List<Salon>();
+            foreach (Salon i in salon)
+            {
+                if (konacno.Contains(i)) perm.Add(i);
+            }
+            konacno = perm;
+        }
+        public List<Salon> DohvatiPodatke(Grad grad, float minOcjena, Usluga usluga, int cijenaOd, float cijenaDo)
+        {
+            using (var db = new PI2230_DBEntities())
+            {
+                bool proslo = false;
+                List<Salon> frizerskisalon = db.Salon.ToList();
+                if (grad != null)
+                {
+                    var query = (from s in db.Salon
+                                 where s.Grad == grad
+                                 select s).ToList();
+                    konacno = query;
+                    proslo = true;
+                }
+                if (minOcjena > 1)
+                {
+                    var query = (from s in db.Salon
+                                 where s.Ocjena >= minOcjena
+                                 select s).ToList();
+                    if (proslo)
+                    {
+                        Provjera(query);
+                    }
+                    proslo = true;
+                }
+                if (usluga != null)
+                {
+                    var query = (from s in db.Cjenik
+                                 where s.Usluga == usluga
+                                 select s.Salon).ToList();
+                    if (proslo)
+                    {
+                        Provjera(query);
+                    }
+                    proslo = true;
+                }
+                if (cijenaOd != 0)
+                {
+                    var query = (from c in db.Cjenik
+                                 where c.Usluga.Cijena >= cijenaOd
+                                 select c.Salon).ToList();
+                    if (proslo)
+                    {
+                        Provjera(query);
+                    }
+                    proslo = true;
+                }
+                if (cijenaDo > 0)
+                {
+                    var query = (from c in db.Cjenik
+                                 where c.Usluga.Cijena <= cijenaDo
+                                 select c.Salon).ToList();
+                    if (proslo)
+                    {
+                        Provjera(query);
+                    }
+                }
+                return konacno;
+            }
+        }
     }
 }

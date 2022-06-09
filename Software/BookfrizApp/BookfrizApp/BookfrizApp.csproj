@@ -84,11 +84,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Registracija.cs">
+    <Compile Include="Forms\Registracija.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Registracija.Designer.cs" />
-    <Compile Include="Gradd.cs">
+    <Compile Include="Forms\Registracija.Designer.cs" />
+    <Compile Include="Forms\Trazilica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Trazilica.Designer.cs">
+      <DependentUpon>Trazilica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Grad.cs">
       <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="Klijent.cs">
@@ -108,7 +114,10 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Registracija.resx" />
+    <EmbeddedResource Include="Forms\Registracija.resx" />
+    <EmbeddedResource Include="Forms\Trazilica.resx">
+      <DependentUpon>Trazilica.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
