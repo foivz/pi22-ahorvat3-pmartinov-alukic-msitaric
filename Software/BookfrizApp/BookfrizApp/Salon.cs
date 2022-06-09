@@ -31,7 +31,7 @@ namespace BookfrizApp
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cjenik> Cjenik { get; set; }
-        public virtual Grad Grad { get; set; }
+        public virtual Gradd Gradd { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Vlasnik> Vlasnik { get; set; }
     }

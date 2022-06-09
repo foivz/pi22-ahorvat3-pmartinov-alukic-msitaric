@@ -1,14 +1,13 @@
 ﻿using BookfrizApp;
-using Klasa_Registracija;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Registracija_klasa
+namespace BookfrizApp.Classes
 {
-    public class Repozitorij : PI2230_DBEntities
+    public class Repozitorij
     {
         public Korisnik korisnik;
         public void DodajUBazu()
@@ -28,6 +27,7 @@ namespace Registracija_klasa
                 };
                 db.Klijent.Add(klijent);
                 db.SaveChanges();
+
             }
         }
         public bool ProvjeriPostojanje(string email)

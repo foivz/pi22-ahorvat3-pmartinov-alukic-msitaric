@@ -58,6 +58,9 @@
     <Compile Include="Cjenik.cs">
       <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Classes\FrizerskiSalon.cs" />
+    <Compile Include="Classes\FrizerskiUsluga.cs" />
+    <Compile Include="Classes\Grad.cs" />
     <Compile Include="Classes\Korisnik.cs" />
     <Compile Include="Classes\Repozitorij.cs" />
     <Compile Include="DataBase.Context.cs">
@@ -85,7 +88,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\Registracija.Designer.cs" />
-    <Compile Include="Grad.cs">
+    <Compile Include="Gradd.cs">
       <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
     <Compile Include="Klijent.cs">
@@ -137,19 +140,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="DataBase.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DataBase.Context.cs</LastGenOutput>
       <DependentUpon>DataBase.edmx</DependentUpon>
+      <LastGenOutput>DataBase.Context.cs</LastGenOutput>
     </Content>
     <Content Include="DataBase.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DataBase.edmx</DependentUpon>
       <LastGenOutput>DataBase.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

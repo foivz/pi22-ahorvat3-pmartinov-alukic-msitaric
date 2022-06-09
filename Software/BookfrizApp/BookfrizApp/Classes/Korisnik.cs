@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Klasa_Registracija
+namespace BookfrizApp.Classes
 {
     public class Korisnik
     {

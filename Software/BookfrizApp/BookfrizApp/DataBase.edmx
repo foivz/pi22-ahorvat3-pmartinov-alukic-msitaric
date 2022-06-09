@@ -13,13 +13,13 @@
           <Property Name="idUsluga" Type="int" Nullable="false" />
           <Property Name="idSalon" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="Grad">
+        <EntityType Name="Gradd">
           <Key>
             <PropertyRef Name="idGrad" />
           </Key>
           <Property Name="idGrad" Type="int" Nullable="false" />
-          <Property Name="Naziv" Type="varbinary" MaxLength="50" />
-          <Property Name="PosBroj" Type="int" />
+          <Property Name="Naziv" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PosBroj" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Klijent">
           <Key>
@@ -94,10 +94,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Salon_Grad">
-          <End Role="Grad" Type="Self.Grad" Multiplicity="0..1" />
+          <End Role="Gradd" Type="Self.Gradd" Multiplicity="0..1" />
           <End Role="Salon" Type="Self.Salon" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Grad">
+            <Principal Role="Gradd">
               <PropertyRef Name="idGrad" />
             </Principal>
             <Dependent Role="Salon">
@@ -119,7 +119,7 @@
         </Association>
         <EntityContainer Name="PI2230_DBModelStoreContainer">
           <EntitySet Name="Cjenik" EntityType="Self.Cjenik" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Grad" EntityType="Self.Grad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gradd" EntityType="Self.Gradd" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Klijent" EntityType="Self.Klijent" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Salon" EntityType="Self.Salon" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usluga" EntityType="Self.Usluga" Schema="dbo" store:Type="Tables" />
@@ -133,7 +133,7 @@
             <End Role="Cjenik" EntitySet="Cjenik" />
           </AssociationSet>
           <AssociationSet Name="FK_Salon_Grad" Association="Self.FK_Salon_Grad">
-            <End Role="Grad" EntitySet="Grad" />
+            <End Role="Gradd" EntitySet="Gradd" />
             <End Role="Salon" EntitySet="Salon" />
           </AssociationSet>
           <AssociationSet Name="FK_Vlasnik_Salon" Association="Self.FK_Vlasnik_Salon">
@@ -156,14 +156,14 @@
           <NavigationProperty Name="Salon" Relationship="Self.FK_Cjenik_Salon" FromRole="Cjenik" ToRole="Salon" />
           <NavigationProperty Name="Usluga" Relationship="Self.FK_Cjenik_Usluga" FromRole="Cjenik" ToRole="Usluga" />
         </EntityType>
-        <EntityType Name="Grad">
+        <EntityType Name="Gradd">
           <Key>
             <PropertyRef Name="idGrad" />
           </Key>
           <Property Name="idGrad" Type="Int32" Nullable="false" />
-          <Property Name="Naziv" Type="Binary" MaxLength="50" FixedLength="false" />
-          <Property Name="PosBroj" Type="Int32" />
-          <NavigationProperty Name="Salon" Relationship="Self.FK_Salon_Grad" FromRole="Grad" ToRole="Salon" />
+          <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PosBroj" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Salon" Relationship="Self.FK_Salon_Grad" FromRole="Gradd" ToRole="Salon" />
         </EntityType>
         <EntityType Name="Klijent">
           <Key>
@@ -190,7 +190,7 @@
           <Property Name="idGrad" Type="Int32" />
           <Property Name="Ocjena" Type="Double" />
           <NavigationProperty Name="Cjenik" Relationship="Self.FK_Cjenik_Salon" FromRole="Salon" ToRole="Cjenik" />
-          <NavigationProperty Name="Grad" Relationship="Self.FK_Salon_Grad" FromRole="Salon" ToRole="Grad" />
+          <NavigationProperty Name="Gradd" Relationship="Self.FK_Salon_Grad" FromRole="Salon" ToRole="Gradd" />
           <NavigationProperty Name="Vlasnik" Relationship="Self.FK_Vlasnik_Salon" FromRole="Salon" ToRole="Vlasnik" />
         </EntityType>
         <EntityType Name="Usluga">
@@ -243,10 +243,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Salon_Grad">
-          <End Role="Grad" Type="Self.Grad" Multiplicity="0..1" />
+          <End Role="Gradd" Type="Self.Gradd" Multiplicity="0..1" />
           <End Role="Salon" Type="Self.Salon" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Grad">
+            <Principal Role="Gradd">
               <PropertyRef Name="idGrad" />
             </Principal>
             <Dependent Role="Salon">
@@ -268,7 +268,7 @@
         </Association>
         <EntityContainer Name="PI2230_DBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Cjenik" EntityType="Self.Cjenik" />
-          <EntitySet Name="Grad" EntityType="Self.Grad" />
+          <EntitySet Name="Gradd" EntityType="Self.Gradd" />
           <EntitySet Name="Klijent" EntityType="Self.Klijent" />
           <EntitySet Name="Salon" EntityType="Self.Salon" />
           <EntitySet Name="Usluga" EntityType="Self.Usluga" />
@@ -282,7 +282,7 @@
             <End Role="Cjenik" EntitySet="Cjenik" />
           </AssociationSet>
           <AssociationSet Name="FK_Salon_Grad" Association="Self.FK_Salon_Grad">
-            <End Role="Grad" EntitySet="Grad" />
+            <End Role="Gradd" EntitySet="Gradd" />
             <End Role="Salon" EntitySet="Salon" />
           </AssociationSet>
           <AssociationSet Name="FK_Vlasnik_Salon" Association="Self.FK_Vlasnik_Salon">
@@ -305,9 +305,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Grad">
-            <EntityTypeMapping TypeName="PI2230_DBModel.Grad">
-              <MappingFragment StoreEntitySet="Grad">
+          <EntitySetMapping Name="Gradd">
+            <EntityTypeMapping TypeName="PI2230_DBModel.Gradd">
+              <MappingFragment StoreEntitySet="Gradd">
                 <ScalarProperty Name="idGrad" ColumnName="idGrad" />
                 <ScalarProperty Name="Naziv" ColumnName="Naziv" />
                 <ScalarProperty Name="PosBroj" ColumnName="PosBroj" />
