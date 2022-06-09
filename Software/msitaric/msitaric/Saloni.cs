@@ -154,15 +154,20 @@ namespace msitaric
                             where s.Naziv == termin.Salon
                             select s.idSalon;
                 int idSalona = query.First();
+
                 Termin ter = new Termin
                 {
-                    Vrijeme = TimeSpan.Parse(vrijeme.ToString()),
-                    Datum = datum,
+                    Vrijeme = TimeSpan.Parse(vrijeme.ToString()+":00:00"),
+                    Datum = datum.Date,
                     IdSalon = idSalona,
                     IdKlijent = idKorisnika
                 };
-                //context.Termin.Add(ter);
-                //context.SaveChanges();
+
+                string sql = "INSERT INTO Termin(Datum, Vrijeme, IdKlijent, IdSalon) " +
+                    "VALUES ('"+ter.Datum.Day+"-"+ ter.Datum.Month+"-"+ ter.Datum.Year + 
+                    "', '" + ter.Vrijeme + "', " + ter.IdKlijent + ", " + ter.IdSalon + ")";
+                Console.WriteLine(sql);
+                context.Database.ExecuteSqlCommand(sql);
             }            
         }
     }

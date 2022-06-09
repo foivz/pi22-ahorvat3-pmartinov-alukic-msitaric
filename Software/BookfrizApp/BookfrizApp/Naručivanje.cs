@@ -35,9 +35,15 @@ namespace BookfrizApp
             //1 zamjeniti sa id korisnika
             saloni.ObaviRezervaciju(termin, vrijeme, datum, 1);
             MessageBox.Show("Uspješno rezerviran termin!");
+            osvjezi();
         }
 
         private void buttonFiltriraj_Click(object sender, EventArgs e)
+        {
+            osvjezi();
+        }
+
+        private void osvjezi()
         {
             salon = comboBoxSaloni.SelectedItem.ToString();
             usluga = comboBoxUsluge.SelectedItem.ToString();
