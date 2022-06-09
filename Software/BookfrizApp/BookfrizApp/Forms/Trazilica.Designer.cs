@@ -35,15 +35,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cmbGrad = new System.Windows.Forms.ComboBox();
             this.cmbUsluga = new System.Windows.Forms.ComboBox();
-            this.txtOcjena = new System.Windows.Forms.TextBox();
             this.btnOdustani = new System.Windows.Forms.Button();
             this.btnTrazi = new System.Windows.Forms.Button();
             this.trackCijenaDo = new System.Windows.Forms.TrackBar();
             this.trackCijenaOd = new System.Windows.Forms.TrackBar();
             this.txtCijenaDo = new System.Windows.Forms.TextBox();
             this.txtCijenaOd = new System.Windows.Forms.TextBox();
+            this.numOcjena = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.trackCijenaDo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackCijenaOd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numOcjena)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -107,13 +108,6 @@
             this.cmbUsluga.Size = new System.Drawing.Size(121, 24);
             this.cmbUsluga.TabIndex = 6;
             // 
-            // txtOcjena
-            // 
-            this.txtOcjena.Location = new System.Drawing.Point(545, 30);
-            this.txtOcjena.Name = "txtOcjena";
-            this.txtOcjena.Size = new System.Drawing.Size(100, 22);
-            this.txtOcjena.TabIndex = 8;
-            // 
             // btnOdustani
             // 
             this.btnOdustani.Location = new System.Drawing.Point(464, 120);
@@ -169,18 +163,40 @@
             this.txtCijenaOd.Size = new System.Drawing.Size(55, 22);
             this.txtCijenaOd.TabIndex = 15;
             // 
+            // numOcjena
+            // 
+            this.numOcjena.Location = new System.Drawing.Point(545, 31);
+            this.numOcjena.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numOcjena.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numOcjena.Name = "numOcjena";
+            this.numOcjena.Size = new System.Drawing.Size(120, 22);
+            this.numOcjena.TabIndex = 16;
+            this.numOcjena.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // Trazilica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(745, 183);
+            this.Controls.Add(this.numOcjena);
             this.Controls.Add(this.txtCijenaOd);
             this.Controls.Add(this.txtCijenaDo);
             this.Controls.Add(this.trackCijenaOd);
             this.Controls.Add(this.trackCijenaDo);
             this.Controls.Add(this.btnTrazi);
             this.Controls.Add(this.btnOdustani);
-            this.Controls.Add(this.txtOcjena);
             this.Controls.Add(this.cmbUsluga);
             this.Controls.Add(this.cmbGrad);
             this.Controls.Add(this.label5);
@@ -193,6 +209,7 @@
             this.Load += new System.EventHandler(this.Trazilica_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.trackCijenaDo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackCijenaOd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numOcjena)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,12 +224,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbGrad;
         private System.Windows.Forms.ComboBox cmbUsluga;
-        private System.Windows.Forms.TextBox txtOcjena;
         private System.Windows.Forms.Button btnOdustani;
         private System.Windows.Forms.Button btnTrazi;
         private System.Windows.Forms.TrackBar trackCijenaDo;
         private System.Windows.Forms.TrackBar trackCijenaOd;
         private System.Windows.Forms.TextBox txtCijenaDo;
         private System.Windows.Forms.TextBox txtCijenaOd;
+        private System.Windows.Forms.NumericUpDown numOcjena;
     }
 }

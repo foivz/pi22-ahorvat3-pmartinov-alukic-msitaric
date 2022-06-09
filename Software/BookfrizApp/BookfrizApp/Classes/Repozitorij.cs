@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 namespace BookfrizApp.Classes
 {
     public class Repozitorij
-    {
+    { 
+        //Registracija
         public Korisnik korisnik;
         public void DodajUBazu()
         {
@@ -27,7 +28,6 @@ namespace BookfrizApp.Classes
                 };
                 db.Klijent.Add(klijent);
                 db.SaveChanges();
-
             }
         }
         public bool ProvjeriPostojanje(string email)
@@ -66,8 +66,7 @@ namespace BookfrizApp.Classes
                 }
             }
         }
-        public Korisnik Korisnik { get; set; }
-        public FrizerskiSalon FrizerskiSalon { get; set; }
+        //Tražilica
         List<Salon> konacno = new List<Salon>();
         public void Provjera(List<Salon> salon)
         {
@@ -76,7 +75,7 @@ namespace BookfrizApp.Classes
             {
                 if (konacno.Contains(i)) perm.Add(i);
             }
-            konacno = perm;
+            konacno = perm.Distinct().ToList();
         }
         public List<Salon> DohvatiPodatke(Grad grad, float minOcjena, Usluga usluga, int cijenaOd, float cijenaDo)
         {
@@ -87,55 +86,71 @@ namespace BookfrizApp.Classes
                 if (grad != null)
                 {
                     var query = (from s in db.Salon
-                                 where s.Grad == grad
+                                 join g in db.Grad on s.idGrad equals g.idGrad
+                                 where g.idGrad == grad.idGrad
                                  select s).ToList();
                     konacno = query;
                     proslo = true;
                 }
-                if (minOcjena > 1)
+                if (usluga != null)
                 {
                     var query = (from s in db.Salon
-                                 where s.Ocjena >= minOcjena
+                                 join c in db.Cjenik on s.idSalon equals c.idSalon
+                                 join u in db.Usluga on c.idUsluga equals u.idUsluga
+                                 where u.idUsluga == usluga.idUsluga
                                  select s).ToList();
                     if (proslo)
                     {
                         Provjera(query);
                     }
-                    proslo = true;
-                }
-                if (usluga != null)
-                {
-                    var query = (from s in db.Cjenik
-                                 where s.Usluga == usluga
-                                 select s.Salon).ToList();
-                    if (proslo)
+                    else
                     {
-                        Provjera(query);
+                        konacno = query;
+                        proslo = true;
                     }
-                    proslo = true;
                 }
-                if (cijenaOd != 0)
+                var query1 = (from s in db.Salon
+                              join c in db.Cjenik on s.idSalon equals c.idSalon
+                              join u in db.Usluga on c.idUsluga equals u.idUsluga
+                              where u.Cijena >= cijenaOd
+                              where u.Cijena <= cijenaDo
+                              where s.Ocjena >= minOcjena
+                              select s).ToList();
+                if (proslo)
                 {
-                    var query = (from c in db.Cjenik
-                                 where c.Usluga.Cijena >= cijenaOd
-                                 select c.Salon).ToList();
-                    if (proslo)
-                    {
-                        Provjera(query);
-                    }
-                    proslo = true;
+                    Provjera(query1);
                 }
-                if (cijenaDo > 0)
+                else
                 {
-                    var query = (from c in db.Cjenik
-                                 where c.Usluga.Cijena <= cijenaDo
-                                 select c.Salon).ToList();
-                    if (proslo)
-                    {
-                        Provjera(query);
-                    }
+                    konacno = query1.Distinct().ToList();
                 }
                 return konacno;
+            }
+        }
+        public List<Usluga> PrikaziZeljeneUslugeSalona(Salon salon, Usluga usluga,int cijenaOd,int cijenaDo)
+        {
+            using (var db = new PI2230_DBEntities())
+            {
+                if (usluga != null)
+                {
+                    var query = (from u in db.Usluga
+                                 join c in db.Cjenik on u.idUsluga equals c.idUsluga
+                                 where c.idSalon == salon.idSalon
+                                 where u.idUsluga == usluga.idUsluga
+                                 where u.Cijena>=cijenaOd
+                                 where u.Cijena<=cijenaDo
+                                 select u).ToList();
+                    return query;
+                }
+
+                var query1 = (from u in db.Usluga
+                              join c in db.Cjenik on u.idUsluga equals c.idUsluga
+                              where c.idSalon == salon.idSalon
+                              where u.Cijena >= cijenaOd
+                              where u.Cijena <= cijenaDo 
+                              select u).ToList();
+                return query1;
+
             }
         }
     }

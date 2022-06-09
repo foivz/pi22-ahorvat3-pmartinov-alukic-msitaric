@@ -84,6 +84,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Cjenik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cjenik.Designer.cs">
+      <DependentUpon>Cjenik.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Registracija.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,12 @@
     </Compile>
     <Compile Include="Forms\Trazilica.Designer.cs">
       <DependentUpon>Trazilica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TrazilicaIspis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TrazilicaIspis.Designer.cs">
+      <DependentUpon>TrazilicaIspis.cs</DependentUpon>
     </Compile>
     <Compile Include="Grad.cs">
       <DependentUpon>DataBase.tt</DependentUpon>
@@ -114,9 +126,15 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Cjenik.resx">
+      <DependentUpon>Cjenik.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Registracija.resx" />
     <EmbeddedResource Include="Forms\Trazilica.resx">
       <DependentUpon>Trazilica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TrazilicaIspis.resx">
+      <DependentUpon>TrazilicaIspis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

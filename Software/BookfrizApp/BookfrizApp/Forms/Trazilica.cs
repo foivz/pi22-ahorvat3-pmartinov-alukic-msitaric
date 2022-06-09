@@ -18,17 +18,14 @@ namespace BookfrizApp.Forms
             InitializeComponent();
         }
         Repozitorij repozitorij = new Repozitorij();
-
         private void trackCijenaOd_Scroll(object sender, EventArgs e)
         {
             txtCijenaOd.Text = trackCijenaOd.Value.ToString();
         }
-
         private void trackCijenaDo_Scroll(object sender, EventArgs e)
         {
             txtCijenaDo.Text= trackCijenaDo.Value.ToString();
         }
-
         private void Trazilica_Load_1(object sender, EventArgs e)
         {
             txtCijenaOd.Text = "0";
@@ -37,20 +34,16 @@ namespace BookfrizApp.Forms
             {
                 var query = (from g in db.Grad
                              select g).ToList();
-                List<string> naziv = new List<string>();
                 foreach (var i in query)
                 {
-                    naziv.Add(i.Naziv);
+                    cmbGrad.Items.Add(i.Naziv);
                 }
-                cmbGrad.DataSource = naziv;
                 var queryy = (from u in db.Usluga
                               select u).ToList();
-                List<string> nazivv = new List<string>();
                 foreach (var i in queryy)
                 {
-                    nazivv.Add(i.Naziv);
+                    cmbUsluga.Items.Add(i.Naziv);
                 }
-                cmbUsluga.DataSource = nazivv;
             }
         }
 
@@ -62,25 +55,48 @@ namespace BookfrizApp.Forms
         private void btnTrazi_Click_1(object sender, EventArgs e)
         {
             Grad grad = new Grad();
-            using (var db = new PI2230_DBEntities())
-            {
-                var query = (from g in db.Grad
-                             where g.Naziv == cmbGrad.SelectedItem.ToString()
-                             select g).ToList();
-                grad = query[0];
-            }
-            string naziv = cmbUsluga.SelectedItem.ToString();
             Usluga usluga = new Usluga();
-            using (var db = new PI2230_DBEntities())
+            try
             {
-                var query = (from u in db.Usluga
-                             where u.Naziv == naziv
-                             select u).ToList();
-                usluga = query[0];
+                using (var db = new PI2230_DBEntities())
+                {
+                    var query = (from g in db.Grad
+                                 where g.Naziv == cmbGrad.SelectedItem.ToString()
+                                 select g).ToList();
+                    grad = query[0];
+                }
             }
-            double x = Convert.ToDouble(txtOcjena.Text);
+            catch (NullReferenceException)
+            {
+                grad = null;
+            }
+            catch (NotSupportedException)
+            {
+                grad = null;
+            }
+            try
+            {
+                using (var db = new PI2230_DBEntities())
+                {
+                    var query = (from u in db.Usluga
+                                 where u.Naziv == cmbUsluga.SelectedItem.ToString()
+                                 select u).ToList();
+                    usluga = query[0];
+                }
+            }
+            catch (NullReferenceException)
+            {
+                usluga = null;
+            }
+            catch (NotSupportedException)
+            {
+                usluga = null;
+            }
+            double x = Convert.ToDouble(numOcjena.Value);
             List<Salon> saloni= repozitorij.DohvatiPodatke(grad, (float)x, usluga, trackCijenaOd.Value, trackCijenaDo.Value);
-            int a = 0;
+            TrazilicaIspis trazilicaIspis = new TrazilicaIspis(saloni,usluga,trackCijenaOd.Value,trackCijenaDo.Value);
+            Close();
+            trazilicaIspis.ShowDialog();
         }
     }
 }
