@@ -16,5 +16,11 @@ namespace BookfrizApp
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Naručivanje formNarucivanje = new Naručivanje();
+            formNarucivanje.Show();
+        }
     }
 }
