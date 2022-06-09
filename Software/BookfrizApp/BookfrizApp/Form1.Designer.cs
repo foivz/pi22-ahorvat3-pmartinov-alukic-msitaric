@@ -28,13 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btnRegistracija = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btnRegistracija
+            // 
+            this.btnRegistracija.Location = new System.Drawing.Point(257, 83);
+            this.btnRegistracija.Name = "btnRegistracija";
+            this.btnRegistracija.Size = new System.Drawing.Size(167, 98);
+            this.btnRegistracija.TabIndex = 1;
+            this.btnRegistracija.Text = "button2";
+            this.btnRegistracija.UseVisualStyleBackColor = true;
+            this.btnRegistracija.Click += new System.EventHandler(this.btnRegistracija_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRegistracija);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnRegistracija;
     }
 }
 
