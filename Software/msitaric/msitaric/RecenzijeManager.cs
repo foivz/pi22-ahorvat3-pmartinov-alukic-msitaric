@@ -49,7 +49,6 @@ namespace msitaric
                     sql = "UPDATE Recenzija SET Opis='" + recenzija.Opis + "', Ocjena='" + recenzija.Ocjena + "'," +
                         "IdTermin="+recenzija.IdTermin+" WHERE IdRecenzija='"+ idRecenzija + "'";
                 }
-                //UPDATE Recenzija SET Opis='ad', Ocjena='2', IdTermin=1 WHERE IdRecenzija='1'
                 context.Database.ExecuteSqlCommand(sql);
             }            
         }

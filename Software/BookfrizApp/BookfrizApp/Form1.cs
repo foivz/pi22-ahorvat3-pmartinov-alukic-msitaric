@@ -19,7 +19,7 @@ namespace BookfrizApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            RecenzijeForm formNarucivanje = new RecenzijeForm();
+            AkcijeForm formNarucivanje = new AkcijeForm();
             formNarucivanje.Show();
         }
     }
