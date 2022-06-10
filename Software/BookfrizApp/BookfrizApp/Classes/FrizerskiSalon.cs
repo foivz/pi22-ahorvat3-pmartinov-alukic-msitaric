@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BookfrizApp.Classes
+﻿namespace BookfrizApp.Classes
 {
     public class FrizerskiSalon
     {
@@ -14,6 +8,7 @@ namespace BookfrizApp.Classes
         public string BrojTelefona { get; set; }
         public string Email { get; set; }
         public Gradd Grad { get; set; }
+        public float Ocjena { get; set; }
         public FrizerskiSalon()
         {
 

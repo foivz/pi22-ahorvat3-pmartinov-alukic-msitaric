@@ -17,7 +17,7 @@ namespace BookfrizApp.Forms
         {
             InitializeComponent();
         }
-        Repozitorij repozitorij = new Repozitorij();
+        private Repozitorij repozitorij = new Repozitorij();
         private void trackCijenaOd_Scroll(object sender, EventArgs e)
         {
             txtCijenaOd.Text = trackCijenaOd.Value.ToString();
@@ -92,8 +92,7 @@ namespace BookfrizApp.Forms
             {
                 usluga = null;
             }
-            double x = Convert.ToDouble(numOcjena.Value);
-            List<Salon> saloni= repozitorij.DohvatiPodatke(grad, (float)x, usluga, trackCijenaOd.Value, trackCijenaDo.Value);
+            List<Salon> saloni= repozitorij.DohvatiPodatke(grad, (float)(Convert.ToDouble(numOcjena.Value)), usluga, trackCijenaOd.Value, trackCijenaDo.Value);
             TrazilicaIspis trazilicaIspis = new TrazilicaIspis(saloni,usluga,trackCijenaOd.Value,trackCijenaDo.Value);
             Close();
             trazilicaIspis.ShowDialog();

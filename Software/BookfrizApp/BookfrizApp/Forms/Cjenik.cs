@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookfrizApp.Classes;
 
@@ -13,9 +6,9 @@ namespace BookfrizApp.Forms
 {
     public partial class Cjenik : Form
     {
-        Salon Salon = new Salon();
-        Usluga Usluga = new Usluga();
-        int CijenaOd, CijenaDo;
+        private Salon Salon = new Salon();
+        private Usluga Usluga = new Usluga();
+        private int CijenaOd, CijenaDo;
         public Cjenik(Salon salon,Usluga usluga,int cijenaOd,int cijenaDo)
         {
             Salon = salon;
@@ -24,10 +17,14 @@ namespace BookfrizApp.Forms
             CijenaDo = cijenaDo;
             InitializeComponent();
         }
-
         private void btnOdustani_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnRezervacija_Click(object sender, EventArgs e)
+        {
+            //odvedinarezervaciju
         }
 
         private void Cjenik_Load(object sender, EventArgs e)

@@ -1,9 +1,5 @@
-﻿using BookfrizApp;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BookfrizApp.Classes
 {
@@ -44,7 +40,7 @@ namespace BookfrizApp.Classes
         }
         public void KreiranjeUserName()
         {
-            string Username = korisnik.Ime.Substring(0, 2) + korisnik.Prezime.Substring(0, 3) + '0';
+            string Username = korisnik.Ime.Substring(0, 2).ToLower() + korisnik.Prezime.Substring(0, 3).ToLower() + '0';
             using (var db = new PI2230_DBEntities())
             {
                 bool sadrzi = false;
@@ -67,7 +63,7 @@ namespace BookfrizApp.Classes
             }
         }
         //Tražilica
-        List<Salon> konacno = new List<Salon>();
+        private List<Salon> konacno = new List<Salon>();
         public void Provjera(List<Salon> salon)
         {
             List<Salon> perm = new List<Salon>();

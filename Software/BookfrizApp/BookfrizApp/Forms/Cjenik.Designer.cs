@@ -30,7 +30,7 @@
         {
             this.dgvCjenik = new System.Windows.Forms.DataGridView();
             this.btnOdustani = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRezervacija = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCjenik)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,21 +54,22 @@
             this.btnOdustani.UseVisualStyleBackColor = true;
             this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
             // 
-            // button1
+            // btnRezervacija
             // 
-            this.button1.Location = new System.Drawing.Point(460, 336);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 61);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Odvedi me na rezervaciju";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRezervacija.Location = new System.Drawing.Point(460, 336);
+            this.btnRezervacija.Name = "btnRezervacija";
+            this.btnRezervacija.Size = new System.Drawing.Size(107, 61);
+            this.btnRezervacija.TabIndex = 2;
+            this.btnRezervacija.Text = "Odvedi me na rezervaciju";
+            this.btnRezervacija.UseVisualStyleBackColor = true;
+            this.btnRezervacija.Click += new System.EventHandler(this.btnRezervacija_Click);
             // 
             // Cjenik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(607, 409);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRezervacija);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.dgvCjenik);
             this.Name = "Cjenik";
@@ -83,6 +84,6 @@
 
         private System.Windows.Forms.DataGridView dgvCjenik;
         private System.Windows.Forms.Button btnOdustani;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRezervacija;
     }
 }

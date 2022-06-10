@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using BookfrizApp.Classes;
+using System;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BookfrizApp.Classes;
 
 namespace BookfrizApp.Forms
 {
@@ -18,7 +11,7 @@ namespace BookfrizApp.Forms
         {
             InitializeComponent();
         }
-        Repozitorij repozitorij = new Repozitorij();
+        private Repozitorij repozitorij = new Repozitorij();
         private void btnRegistracija_Click(object sender, EventArgs e)
         {
             string spol;
@@ -49,37 +42,31 @@ namespace BookfrizApp.Forms
             if (txtLozinka.Text != txtPonovljena.Text) return true;
             return false;
         }
-
         private void Registracija_Load_1(object sender, EventArgs e)
         {
             btnPrikazLozinka.BringToFront();
             btnPrikazPonovljena.BringToFront();
         }
-
         private void btnPrikazLozinka_Click(object sender, EventArgs e)
         {
             btnSakrijLozinka.BringToFront();
             txtLozinka.PasswordChar = '\0';
         }
-
         private void btnSakrijLozinka_Click(object sender, EventArgs e)
         {
             btnPrikazLozinka.BringToFront();
             txtLozinka.PasswordChar = '*';
         }
-
         private void btnPrikazPonovljena_Click(object sender, EventArgs e)
         {
             btnSakrijPonovljena.BringToFront();
             txtPonovljena.PasswordChar = '\0';
         }
-
         private void btnSakrijPonovljena_Click(object sender, EventArgs e)
         {
             btnPrikazPonovljena.BringToFront();
             txtPonovljena.PasswordChar = '*';
         }
-
         private void btnOdustani_Click(object sender, EventArgs e)
         {
             Close();
