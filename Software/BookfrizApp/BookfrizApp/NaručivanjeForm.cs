@@ -11,13 +11,13 @@ using msitaric;
 
 namespace BookfrizApp
 {
-    public partial class Naručivanje : Form
+    public partial class NaručivanjeForm : Form
     {
-        Saloni saloni = new Saloni();
+        SaloniManager saloni = new SaloniManager();
         string salon, usluga;
         DateTime datum;
         int vrijeme;
-        public Naručivanje()
+        public NaručivanjeForm()
         {
             InitializeComponent();
         }

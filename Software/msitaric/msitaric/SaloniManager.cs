@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace msitaric
 {
-    public class Saloni
+    public class SaloniManager
     {
         public bool ProvjeraPodataka(string podatak)
         {
@@ -46,7 +46,6 @@ namespace msitaric
 
         public List<PopisTermina> DohvatiTermine(string salon, string usluga, int vrijeme)      
         {
-            //INSERT INTO Termin("Datum", "Vrijeme", "IdKlijent", "IdSalon") VALUES ('9-6-2022', '7:0', 1, 1)
             List<PopisTermina> sviSaloniIUsluge;
             using (var context = new PI2230_DBEntities())
             {
@@ -166,7 +165,6 @@ namespace msitaric
                 string sql = "INSERT INTO Termin(Datum, Vrijeme, IdKlijent, IdSalon) " +
                     "VALUES ('"+ter.Datum.Day+"-"+ ter.Datum.Month+"-"+ ter.Datum.Year + 
                     "', '" + ter.Vrijeme + "', " + ter.IdKlijent + ", " + ter.IdSalon + ")";
-                Console.WriteLine(sql);
                 context.Database.ExecuteSqlCommand(sql);
             }            
         }

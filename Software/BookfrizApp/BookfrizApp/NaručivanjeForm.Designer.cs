@@ -1,6 +1,6 @@
 ﻿namespace BookfrizApp
 {
-    partial class Naručivanje
+    partial class NaručivanjeForm
     {
         /// <summary>
         /// Required designer variable.
