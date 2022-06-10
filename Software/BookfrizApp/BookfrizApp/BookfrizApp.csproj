@@ -65,11 +65,23 @@
     <Compile Include="AkcijeForm.Designer.cs">
       <DependentUpon>AkcijeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DodajNovuAkcijuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajNovuAkcijuForm.Designer.cs">
+      <DependentUpon>DodajNovuAkcijuForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MojeAkcijeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MojeAkcijeForm.Designer.cs">
+      <DependentUpon>MojeAkcijeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="NaručivanjeForm.cs">
       <SubType>Form</SubType>
@@ -94,8 +106,14 @@
     <EmbeddedResource Include="AkcijeForm.resx">
       <DependentUpon>AkcijeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DodajNovuAkcijuForm.resx">
+      <DependentUpon>DodajNovuAkcijuForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MojeAkcijeForm.resx">
+      <DependentUpon>MojeAkcijeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NaručivanjeForm.resx">
       <DependentUpon>NaručivanjeForm.cs</DependentUpon>
