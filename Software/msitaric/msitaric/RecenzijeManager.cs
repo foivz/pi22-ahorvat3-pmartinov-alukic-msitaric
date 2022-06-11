@@ -10,6 +10,7 @@ namespace msitaric
     {
         public List<PrikazRecenzije> DohvatiRecenzije(int idKlijenta)
         {
+            List<PrikazRecenzije> sveRecenzije;
             using (var context = new PI2230_DBEntities())
             {
                 var query = from t in context.Termin.Where(t => t.Datum >= DateTime.Now)
@@ -25,7 +26,9 @@ namespace msitaric
                                 Ocjena = x.Ocjena,
                                 Opis = x.Opis
                             };
-                return query.ToList();
+                sveRecenzije = query.ToList();
+
+                return sveRecenzije;
             }
         }
         public void UnesiRecenziju(string opis, int ocjena, int termin, int? idRecenzija)

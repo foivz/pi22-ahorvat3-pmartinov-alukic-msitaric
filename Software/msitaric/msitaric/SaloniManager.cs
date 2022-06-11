@@ -44,7 +44,7 @@ namespace msitaric
             return popisUsluga;
         }
 
-        public List<PopisTermina> DohvatiTermine(string salon, string usluga, int vrijeme)      
+        public List<PopisTermina> DohvatiTermine(string salon, string usluga, int vrijeme, DateTime datum, int v)      
         {
             List<PopisTermina> sviSaloniIUsluge;
             using (var context = new PI2230_DBEntities())
@@ -60,20 +60,22 @@ namespace msitaric
                                  join s in context.Salon on c.idSalon equals s.idSalon
                                  join u in context.Usluga on c.idUsluga equals u.idUsluga
                                  join a in context.Akcija on c.idCjenik equals a.IdCjenik into akcija
-                                 join t in context.Termin on c.idSalon equals t.IdSalon into upit
-                                 from ime in upit.DefaultIfEmpty()
-                                 where ime.Vrijeme.Hours != vrijeme
                                  from ak in akcija.DefaultIfEmpty()
                                  select new PopisTermina
                                  {
+                                     Datum = datum.Date,
                                      Salon = s.Naziv,
                                      Usluga = u.Naziv,
                                      NormalnaCijena = u.Cijena.ToString(),
                                      AkcijskaCijena = ak.NovaCijena.ToString()
                                      };
 
-                        sviSaloniIUsluge = query2.ToList();
-                        return sviSaloniIUsluge;
+                    sviSaloniIUsluge = query2.ToList();
+
+                    sviSaloniIUsluge = ProvjeraIspravnosti(sviSaloniIUsluge, datum, v);                   
+
+
+                    return sviSaloniIUsluge;
                     }
 
                     if (usluga == "Sve usluge")
@@ -83,10 +85,7 @@ namespace msitaric
                                      join u in context.Usluga on c.idUsluga equals u.idUsluga
                                      where s.Naziv == salon
                                      join a in context.Akcija on c.idCjenik equals a.IdCjenik into akcija
-                                     join t in context.Termin on c.idSalon equals t.IdSalon into upit
-                                     from ime in upit.DefaultIfEmpty()
                                      from ak in akcija.DefaultIfEmpty()
-                                     where ime.Vrijeme.Hours != vrijeme
                                      select new PopisTermina
                                      {
                                          Salon = s.Naziv,
@@ -96,6 +95,7 @@ namespace msitaric
                                      };
 
                         sviSaloniIUsluge = query2.ToList();
+                        sviSaloniIUsluge = ProvjeraIspravnosti(sviSaloniIUsluge, datum, v);
                         return sviSaloniIUsluge;
                     }
 
@@ -106,10 +106,7 @@ namespace msitaric
                                      join u in context.Usluga on c.idUsluga equals u.idUsluga
                                      where u.Naziv == usluga
                                      join a in context.Akcija on c.idCjenik equals a.IdCjenik into akcija
-                                     join t in context.Termin on c.idSalon equals t.IdSalon into upit
-                                     from ime in upit.DefaultIfEmpty()
                                      from ak in akcija.DefaultIfEmpty()
-                                     where ime.Vrijeme.Hours != vrijeme
                                      select new PopisTermina
                                      {
                                          Salon = s.Naziv,
@@ -119,6 +116,7 @@ namespace msitaric
                                      };
 
                         sviSaloniIUsluge = query2.ToList();
+                        sviSaloniIUsluge = ProvjeraIspravnosti(sviSaloniIUsluge, datum, v);
                         return sviSaloniIUsluge;
                     }
 
@@ -127,10 +125,7 @@ namespace msitaric
                                  join u in context.Usluga on c.idUsluga equals u.idUsluga
                                  where u.Naziv == usluga && s.Naziv == salon
                                  join a in context.Akcija on c.idCjenik equals a.IdCjenik into akcija
-                                 join t in context.Termin on c.idSalon equals t.IdSalon into upit
-                                 from ime in upit.DefaultIfEmpty()
                                  from ak in akcija.DefaultIfEmpty()
-                                 where ime.Vrijeme.Hours != vrijeme
                                  select new PopisTermina
                                  {
                                      Salon = s.Naziv,
@@ -140,7 +135,7 @@ namespace msitaric
                                  };
 
                     sviSaloniIUsluge = query3.ToList();
-                    
+                    sviSaloniIUsluge = ProvjeraIspravnosti(sviSaloniIUsluge, datum, v);
             }
             return sviSaloniIUsluge;
         }
@@ -163,10 +158,48 @@ namespace msitaric
                 };
 
                 string sql = "INSERT INTO Termin(Datum, Vrijeme, IdKlijent, IdSalon) " +
-                    "VALUES ('"+ter.Datum.Day+"-"+ ter.Datum.Month+"-"+ ter.Datum.Year + 
+                    "VALUES ('"+ ter.Datum.Month + "-"+ ter.Datum.Day + "-"+ ter.Datum.Year + 
                     "', '" + ter.Vrijeme + "', " + ter.IdKlijent + ", " + ter.IdSalon + ")";
                 context.Database.ExecuteSqlCommand(sql);
             }            
+        }
+        private List<PopisTermina> ProvjeraIspravnosti(List<PopisTermina> sviSaloniIUsluge, DateTime datum, int v)
+        {
+            using (var context = new PI2230_DBEntities())
+            {
+                var q = from t in context.Termin
+                        select t;
+                List<Termin> ter = q.ToList();
+                List<PopisTermina> brisanjeSalonUsluga = new List<PopisTermina>();
+                foreach (var saloniUsluge in sviSaloniIUsluge)
+                {
+                    foreach (var termin in ter)
+                    {
+                        if (datum.Date == termin.Datum.Date && saloniUsluge.Salon == termin.Salon.Naziv && termin.Vrijeme.Hours == v)
+                        {
+                            brisanjeSalonUsluga.Add(saloniUsluge);
+                        }
+                    }
+                }
+                foreach (var obrisi in brisanjeSalonUsluga)
+                {
+                    sviSaloniIUsluge.Remove(obrisi);
+                }
+
+
+                return sviSaloniIUsluge;
+            }
+        }
+        public bool ProvjeriIspravnostDatuma(DateTime datum)
+        {
+            if (datum.Date < DateTime.Now.Date)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

@@ -8,6 +8,7 @@ namespace msitaric
 {
     public class PopisTermina
     {
+        public DateTime Datum { get; set; }
         public string Salon { get; set; }
         public string Usluga { get; set; }
         public string NormalnaCijena { get; set; }

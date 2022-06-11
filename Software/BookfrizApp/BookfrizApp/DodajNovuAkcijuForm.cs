@@ -47,9 +47,16 @@ namespace BookfrizApp
                 DateTime datumIsteka = dateTimePickerDatumIsteka.Value;
                 decimal novaCijena = numericUpDownCijena.Value;
                 Usluga usluga = comboBoxUsluga.SelectedItem as Usluga;
-                MojeAkcijeManager.UnesiAkciju(opis, datumIsteka, novaCijena, usluga, idSalona);
-                MessageBox.Show("Uspješno unesena akcija salona");
-                Close();
+                if (MojeAkcijeManager.ProvjeriIstekDatuma(datumIsteka))
+                {
+                    MessageBox.Show("Uneseni datum je prošao, molim unesite drugi datum!");
+                }
+                else
+                {
+                    MojeAkcijeManager.UnesiAkciju(opis, datumIsteka, novaCijena, usluga, idSalona);
+                    MessageBox.Show("Uspješno unesena akcija salona");
+                    Close();
+                }                
             }
             else
             {

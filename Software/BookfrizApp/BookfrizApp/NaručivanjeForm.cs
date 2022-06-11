@@ -31,7 +31,7 @@ namespace BookfrizApp
 
         private void buttonRezerviraj_Click(object sender, EventArgs e)
         {
-            PopisTermina termin = dataGridView1.CurrentRow.DataBoundItem as PopisTermina;
+            PopisTermina termin = dataGridViewSaloniUsluge.CurrentRow.DataBoundItem as PopisTermina;
             //1 zamjeniti sa id korisnika
             saloni.ObaviRezervaciju(termin, vrijeme, datum, 1);
             MessageBox.Show("Uspješno rezerviran termin!");
@@ -47,10 +47,19 @@ namespace BookfrizApp
         {
             salon = comboBoxSaloni.SelectedItem.ToString();
             usluga = comboBoxUsluge.SelectedItem.ToString();
-            datum = dateTimePicker.Value;
+            
             vrijeme = int.Parse(numericUpDownSati.Value.ToString());
-
-            dataGridView1.DataSource = saloni.DohvatiTermine(salon, usluga, vrijeme);
+            if (!saloni.ProvjeriIspravnostDatuma(dateTimePicker.Value))
+            {
+                MessageBox.Show("Molim da ne tražite termine u prošlosti.");
+            }
+            else
+            {
+                datum = dateTimePicker.Value;
+                dataGridViewSaloniUsluge.DataSource = saloni.DohvatiTermine(salon, usluga, vrijeme, datum, vrijeme);
+                dataGridViewSaloniUsluge.Columns[0].Visible = false;
+            }
+            
         }
     }
 }

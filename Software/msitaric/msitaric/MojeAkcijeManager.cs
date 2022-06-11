@@ -23,7 +23,9 @@ namespace msitaric
                                 DatumIsteka = a.VrijemeTrajanja,
                                 NovaCijena = a.NovaCijena
                             };
-                return query.ToList();
+                List<MojeAkcije> mojeAkcije = query.ToList();
+                mojeAkcije = ProvjeriDatum(mojeAkcije);
+                return mojeAkcije;
             }
         }
 
@@ -54,9 +56,44 @@ namespace msitaric
                             where c.idSalon == idSalona && c.idUsluga == usluga.idUsluga
                             select c;
                 List<Cjenik> cjenik = query.ToList();
+                string datum = datumIsteka.Day + "-" + datumIsteka.Month + "-" + datumIsteka.Year;
                 string sql = "INSERT INTO Akcija(OpisAkcije, VrijemeTrajanja, NovaCijena, IdCjenik) " +
-                    "VALUES('" + opis + "', '" + datumIsteka + "', '" + novaCijena + "', '" + cjenik[0].idCjenik + "')";
+                    "VALUES('" + opis + "', '" + datum + "', '" + novaCijena + "', '" + cjenik[0].idCjenik + "')";
                 context.Database.ExecuteSqlCommand(sql);
+            }
+        }
+
+        private List<MojeAkcije> ProvjeriDatum(List<MojeAkcije> mojeAkcije)
+        {
+            List<MojeAkcije> akcijeZaBrisanje = new List<MojeAkcije>();
+            foreach (var akcija in mojeAkcije)
+            {
+                DateTime dat = Convert.ToDateTime(akcija.DatumIsteka);
+                if (dat.Date < DateTime.Now.Date)
+                {
+                    akcijeZaBrisanje.Add(akcija);
+                    using (var context = new PI2230_DBEntities())
+                    {
+                        string sql = "DELETE FROM Akcija WHERE IdAkcija='" + akcija.idAkcije + "'";
+                        context.Database.ExecuteSqlCommand(sql);
+                    }
+                }
+            }
+            foreach (var akcija in akcijeZaBrisanje)
+            {
+                mojeAkcije.Remove(akcija);
+            }
+            return mojeAkcije;
+        }
+        public bool ProvjeriIstekDatuma(DateTime datum)
+        {
+            if (datum.Date > DateTime.Now.Date)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
     }

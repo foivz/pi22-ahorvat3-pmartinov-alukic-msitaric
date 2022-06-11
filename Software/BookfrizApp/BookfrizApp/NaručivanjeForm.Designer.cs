@@ -34,12 +34,12 @@
             this.comboBoxSaloni = new System.Windows.Forms.ComboBox();
             this.comboBoxUsluge = new System.Windows.Forms.ComboBox();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewSaloniUsluge = new System.Windows.Forms.DataGridView();
             this.buttonRezerviraj = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.numericUpDownSati = new System.Windows.Forms.NumericUpDown();
             this.buttonFiltriraj = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaloniUsluge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSati)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,13 +93,13 @@
             this.dateTimePicker.Size = new System.Drawing.Size(132, 20);
             this.dateTimePicker.TabIndex = 5;
             // 
-            // dataGridView1
+            // dataGridViewSaloniUsluge
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(82, 84);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(630, 233);
-            this.dataGridView1.TabIndex = 6;
+            this.dataGridViewSaloniUsluge.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSaloniUsluge.Location = new System.Drawing.Point(82, 84);
+            this.dataGridViewSaloniUsluge.Name = "dataGridViewSaloniUsluge";
+            this.dataGridViewSaloniUsluge.Size = new System.Drawing.Size(630, 233);
+            this.dataGridViewSaloniUsluge.TabIndex = 6;
             // 
             // buttonRezerviraj
             // 
@@ -152,7 +152,7 @@
             this.buttonFiltriraj.UseVisualStyleBackColor = true;
             this.buttonFiltriraj.Click += new System.EventHandler(this.buttonFiltriraj_Click);
             // 
-            // Naručivanje
+            // NaručivanjeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -161,17 +161,17 @@
             this.Controls.Add(this.numericUpDownSati);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonRezerviraj);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewSaloniUsluge);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.comboBoxUsluge);
             this.Controls.Add(this.comboBoxSaloni);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Naručivanje";
+            this.Name = "NaručivanjeForm";
             this.Text = "Naručivanje";
             this.Load += new System.EventHandler(this.Naručivanje_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaloniUsluge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSati)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -186,7 +186,7 @@
         private System.Windows.Forms.ComboBox comboBoxSaloni;
         private System.Windows.Forms.ComboBox comboBoxUsluge;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewSaloniUsluge;
         private System.Windows.Forms.Button buttonRezerviraj;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numericUpDownSati;
