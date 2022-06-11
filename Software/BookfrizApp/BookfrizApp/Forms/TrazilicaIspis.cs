@@ -7,9 +7,9 @@ namespace BookfrizApp.Forms
     public partial class TrazilicaIspis : Form
     {
         private List<Salon> Saloni = new List<Salon>();
-        private Usluga Usluga = new Usluga();
+        private string Usluga;
         private int CijenaOd, CijenaDo;
-        public TrazilicaIspis(List<Salon> saloni,Usluga usluga,int cijenaOd,int cijenaDo)
+        public TrazilicaIspis(List<Salon> saloni,string usluga,int cijenaOd,int cijenaDo)
         {
             Saloni = saloni;
             Usluga = usluga;

@@ -7,9 +7,9 @@ namespace BookfrizApp.Forms
     public partial class Cjenik : Form
     {
         private Salon Salon = new Salon();
-        private Usluga Usluga = new Usluga();
+        private string Usluga;
         private int CijenaOd, CijenaDo;
-        public Cjenik(Salon salon,Usluga usluga,int cijenaOd,int cijenaDo)
+        public Cjenik(Salon salon,string usluga,int cijenaOd,int cijenaDo)
         {
             Salon = salon;
             Usluga = usluga;

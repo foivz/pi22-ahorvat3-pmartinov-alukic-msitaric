@@ -20,7 +20,7 @@ namespace BookfrizApp
 
         private void btnRegistracija_Click(object sender, EventArgs e)
         {
-            SaloniUBlizini registracija = new SaloniUBlizini();
+            Trazilica registracija = new Trazilica();
             registracija.ShowDialog();
         }
     }

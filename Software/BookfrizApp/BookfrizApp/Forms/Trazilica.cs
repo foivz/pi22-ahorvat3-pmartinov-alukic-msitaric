@@ -1,13 +1,10 @@
-﻿using System;
+﻿using BookfrizApp.Classes;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BookfrizApp.Classes;
+using BookfrizApp.Exceptions;
 
 namespace BookfrizApp.Forms
 {
@@ -40,10 +37,14 @@ namespace BookfrizApp.Forms
                 }
                 var queryy = (from u in db.Usluga
                               select u).ToList();
+                List<string> x = new List<string>();
+                x.Add("-");
                 foreach (var i in queryy)
                 {
-                    cmbUsluga.Items.Add(i.Naziv);
+                    x.Add(i.Naziv);
                 }
+                x=x.Distinct().ToList();
+                cmbUsluga.DataSource = x;
             }
         }
 
@@ -55,7 +56,7 @@ namespace BookfrizApp.Forms
         private void btnTrazi_Click_1(object sender, EventArgs e)
         {
             Grad grad = new Grad();
-            Usluga usluga = new Usluga();
+            string usluga=null;
             try
             {
                 using (var db = new PI2230_DBEntities())
@@ -74,28 +75,27 @@ namespace BookfrizApp.Forms
             {
                 grad = null;
             }
-            try
+            if (cmbUsluga.SelectedItem.ToString() != "-")
             {
                 using (var db = new PI2230_DBEntities())
                 {
                     var query = (from u in db.Usluga
                                  where u.Naziv == cmbUsluga.SelectedItem.ToString()
                                  select u).ToList();
-                    usluga = query[0];
+                    usluga = query[0].Naziv;
                 }
             }
-            catch (NullReferenceException)
+            try
             {
-                usluga = null;
+                List<Salon> saloni = repozitorij.DohvatiPodatke(grad, (float)(Convert.ToDouble(numOcjena.Value)), usluga, trackCijenaOd.Value, trackCijenaDo.Value);
+                TrazilicaIspis trazilicaIspis = new TrazilicaIspis(saloni, usluga, trackCijenaOd.Value, trackCijenaDo.Value);
+                Close();
+                trazilicaIspis.ShowDialog();
             }
-            catch (NotSupportedException)
+            catch(TrazilicaException ex)
             {
-                usluga = null;
+                MessageBox.Show(ex.Poruka);
             }
-            List<Salon> saloni= repozitorij.DohvatiPodatke(grad, (float)(Convert.ToDouble(numOcjena.Value)), usluga, trackCijenaOd.Value, trackCijenaDo.Value);
-            TrazilicaIspis trazilicaIspis = new TrazilicaIspis(saloni,usluga,trackCijenaOd.Value,trackCijenaDo.Value);
-            Close();
-            trazilicaIspis.ShowDialog();
         }
     }
 }

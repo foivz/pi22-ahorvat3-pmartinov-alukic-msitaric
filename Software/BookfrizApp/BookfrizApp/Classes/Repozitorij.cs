@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using BookfrizApp.Exceptions;
 
 namespace BookfrizApp.Classes
 {
@@ -33,9 +34,9 @@ namespace BookfrizApp.Classes
                 List<Klijent> klijenti = db.Klijent.ToList();
                 foreach (Klijent i in klijenti)
                 {
-                    if (i.Email == email) return true;
+                    if (i.Email == email) throw new PostojanjeException("E-mail već postoji u bazi!"); ;
                 }
-                return false;
+                return true;
             }
         }
         public void KreiranjeUserName()
@@ -73,7 +74,7 @@ namespace BookfrizApp.Classes
             }
             konacno = perm.Distinct().ToList();
         }
-        public List<Salon> DohvatiPodatke(Grad grad, float minOcjena, Usluga usluga, int cijenaOd, float cijenaDo)
+        public List<Salon> DohvatiPodatke(Grad grad, float minOcjena, string usluga, int cijenaOd, float cijenaDo)
         {
             using (var db = new PI2230_DBEntities())
             {
@@ -93,7 +94,7 @@ namespace BookfrizApp.Classes
                     var query = (from s in db.Salon
                                  join c in db.Cjenik on s.idSalon equals c.idSalon
                                  join u in db.Usluga on c.idUsluga equals u.idUsluga
-                                 where u.idUsluga == usluga.idUsluga
+                                 where u.Naziv == usluga
                                  select s).ToList();
                     if (proslo)
                     {
@@ -120,10 +121,11 @@ namespace BookfrizApp.Classes
                 {
                     konacno = query1.Distinct().ToList();
                 }
+                if (konacno.Count() == 0) throw new TrazilicaException("Nemamo salone s takvim zahtjevima");
                 return konacno;
             }
         }
-        public List<Usluga> PrikaziZeljeneUslugeSalona(Salon salon, Usluga usluga,int cijenaOd,int cijenaDo)
+        public List<Usluga> PrikaziZeljeneUslugeSalona(Salon salon, string usluga,int cijenaOd,int cijenaDo)
         {
             using (var db = new PI2230_DBEntities())
             {
@@ -132,7 +134,7 @@ namespace BookfrizApp.Classes
                     var query = (from u in db.Usluga
                                  join c in db.Cjenik on u.idUsluga equals c.idUsluga
                                  where c.idSalon == salon.idSalon
-                                 where u.idUsluga == usluga.idUsluga
+                                 where u.Naziv == usluga
                                  where u.Cijena>=cijenaOd
                                  where u.Cijena<=cijenaDo
                                  select u).ToList();
