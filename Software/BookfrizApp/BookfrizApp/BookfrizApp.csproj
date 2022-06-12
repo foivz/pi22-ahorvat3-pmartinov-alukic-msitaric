@@ -61,6 +61,18 @@
     <Compile Include="FormObavijestiKlijenta.Designer.cs">
       <DependentUpon>FormObavijestiKlijenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPocetnaKlijenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPocetnaKlijenta.Designer.cs">
+      <DependentUpon>FormPocetnaKlijenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPocetnaVlasnika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPocetnaVlasnika.Designer.cs">
+      <DependentUpon>FormPocetnaVlasnika.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPrijava.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +101,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormObavijestiKlijenta.resx">
       <DependentUpon>FormObavijestiKlijenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPocetnaKlijenta.resx">
+      <DependentUpon>FormPocetnaKlijenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPocetnaVlasnika.resx">
+      <DependentUpon>FormPocetnaVlasnika.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrijava.resx">
       <DependentUpon>FormPrijava.cs</DependentUpon>

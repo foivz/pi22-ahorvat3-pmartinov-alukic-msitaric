@@ -91,5 +91,21 @@ namespace BazaPodataka
         {
             //dodati kod za azuriranje klijenta
         }
+
+        public Salon DohvatiSalon(int? idSalona)
+        {
+            Salon salon = new Salon();
+
+            using (var con = new PI2230_DBEntities())
+            {
+                var upit = from s in con.Salons
+                           where s.idSalon == idSalona
+                           select s as Salon;
+                salon = upit.FirstOrDefault();
+            }
+
+            return salon;
+        }
+
     }
 }

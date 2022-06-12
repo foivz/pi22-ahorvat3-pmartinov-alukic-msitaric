@@ -36,12 +36,18 @@ namespace BookfrizApp
                 MessageBox.Show("Uspješna prijava!");
                 Klijent klijent = baza.DohvatiKlijenta(korisnickoIme, lozinka);
                 //otvaranje početne forme za klijenta
+                FormPocetnaKlijenta forma = new FormPocetnaKlijenta(this,klijent);
+                forma.ShowDialog();
+                Close();
                 
             } else if (baza.ProvjeriPostojiVlasnik(korisnickoIme, lozinka))
             {
                 MessageBox.Show("Uspješna prijava!");
                 Vlasnik vlasnik = baza.DohvatiVlasnika(korisnickoIme, lozinka);
                 //otvaranje početne forme za vlasnika
+                FormPocetnaVlasnika forma = new FormPocetnaVlasnika(this,vlasnik);
+                forma.ShowDialog();
+                Close();
 
             } else
             {
@@ -55,5 +61,6 @@ namespace BookfrizApp
         {
             // otvarnje forme za registraciju
         }
+
     }
 }

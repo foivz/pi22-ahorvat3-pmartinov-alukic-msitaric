@@ -40,3 +40,5 @@ C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\Bookfr
 C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\obj\Debug\BookfrizApp.FormProfilKlijenta.resources
 C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\obj\Debug\BookfrizApp.FormProfilSalona.resources
 C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\obj\Debug\BookfrizApp.FormPromjenaLozinke.resources
+C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\obj\Debug\BookfrizApp.FormPocetnaKlijenta.resources
+C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\obj\Debug\BookfrizApp.FormPocetnaVlasnika.resources
