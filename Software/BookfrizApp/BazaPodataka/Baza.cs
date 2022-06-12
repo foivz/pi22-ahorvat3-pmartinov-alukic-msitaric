@@ -86,5 +86,10 @@ namespace BazaPodataka
 
             return vlasnik;
         }
+
+        public void AzurirajKlijenta(Klijent klijent)
+        {
+            //dodati kod za azuriranje klijenta
+        }
     }
 }

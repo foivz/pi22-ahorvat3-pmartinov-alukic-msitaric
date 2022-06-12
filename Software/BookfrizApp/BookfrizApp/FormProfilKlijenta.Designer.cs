@@ -55,6 +55,7 @@
             this.btnPromjeniLozinku.TabIndex = 37;
             this.btnPromjeniLozinku.Text = "Promjeni lozinku";
             this.btnPromjeniLozinku.UseVisualStyleBackColor = true;
+            this.btnPromjeniLozinku.Click += new System.EventHandler(this.btnPromjeniLozinku_Click);
             // 
             // btnOdustani
             // 
@@ -64,6 +65,7 @@
             this.btnOdustani.TabIndex = 36;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
+            this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
             // 
             // btnSpremi
             // 
@@ -73,6 +75,7 @@
             this.btnSpremi.TabIndex = 35;
             this.btnSpremi.Text = "Spremi";
             this.btnSpremi.UseVisualStyleBackColor = true;
+            this.btnSpremi.Click += new System.EventHandler(this.btnSpremi_Click);
             // 
             // label8
             // 
