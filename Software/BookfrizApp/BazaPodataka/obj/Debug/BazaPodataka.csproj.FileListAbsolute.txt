@@ -1,0 +1,12 @@
+C:\Users\38591\source\repos\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BazaPodataka\bin\Debug\BazaPodataka.dll.config
+C:\Users\38591\source\repos\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BazaPodataka\bin\Debug\BazaPodataka.dll
+C:\Users\38591\source\repos\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BazaPodataka\bin\Debug\BazaPodataka.pdb
+C:\Users\38591\source\repos\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BazaPodataka\bin\Debug\EntityFramework.dll
+C:\Users\38591\source\repos\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BazaPodataka\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\38591\source\repos\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BazaPodataka\bin\Debug\EntityFramework.xml
+C:\Users\38591\source\repos\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BazaPodataka\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\38591\source\repos\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BazaPodataka\obj\Debug\BazaPodataka.csproj.AssemblyReference.cache
+C:\Users\38591\source\repos\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BazaPodataka\obj\Debug\BazaPodataka.csproj.CoreCompileInputs.cache
+C:\Users\38591\source\repos\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BazaPodataka\obj\Debug\BazaPodataka.csproj.CopyComplete
+C:\Users\38591\source\repos\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BazaPodataka\obj\Debug\BazaPodataka.dll
+C:\Users\38591\source\repos\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BazaPodataka\obj\Debug\BazaPodataka.pdb

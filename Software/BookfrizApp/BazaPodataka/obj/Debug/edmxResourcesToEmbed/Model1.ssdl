@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PI2230_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Akcija">
+    <Key>
+      <PropertyRef Name="IdAkcija" />
+    </Key>
+    <Property Name="IdAkcija" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OpisAkcije" Type="varchar" MaxLength="50" />
+    <Property Name="VrijemeTrajanja" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="NovaCijena" Type="float" Nullable="false" />
+    <Property Name="IdCjenik" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cjenik">
+    <Key>
+      <PropertyRef Name="idCjenik" />
+    </Key>
+    <Property Name="idCjenik" Type="int" Nullable="false" />
+    <Property Name="idUsluga" Type="int" Nullable="false" />
+    <Property Name="idSalon" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Grad">
+    <Key>
+      <PropertyRef Name="idGrad" />
+    </Key>
+    <Property Name="idGrad" Type="int" Nullable="false" />
+    <Property Name="Naziv" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PosBroj" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Klijent">
+    <Key>
+      <PropertyRef Name="idKlijent" />
+    </Key>
+    <Property Name="idKlijent" Type="int" Nullable="false" />
+    <Property Name="Ime" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Prezime" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Spol" Type="varchar" MaxLength="10" />
+    <Property Name="Email" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="BrojTelefona" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Lozinka" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Recenzija">
+    <Key>
+      <PropertyRef Name="IdRecenzija" />
+    </Key>
+    <Property Name="IdRecenzija" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Opis" Type="text" />
+    <Property Name="Ocjena" Type="int" />
+    <Property Name="IdTermin" Type="int" />
+  </EntityType>
+  <EntityType Name="Salon">
+    <Key>
+      <PropertyRef Name="idSalon" />
+    </Key>
+    <Property Name="idSalon" Type="int" Nullable="false" />
+    <Property Name="Naziv" Type="varchar" MaxLength="50" />
+    <Property Name="Adresa" Type="varchar" MaxLength="50" />
+    <Property Name="BrojTelefona" Type="varchar" MaxLength="20" />
+    <Property Name="Email" Type="varchar" MaxLength="30" />
+    <Property Name="idGrad" Type="int" />
+    <Property Name="Ocjena" Type="float" />
+  </EntityType>
+  <EntityType Name="Termin">
+    <Key>
+      <PropertyRef Name="idTermin" />
+    </Key>
+    <Property Name="idTermin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Vrijeme" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Datum" Type="date" Nullable="false" />
+    <Property Name="IdKlijent" Type="int" />
+    <Property Name="IdSalon" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usluga">
+    <Key>
+      <PropertyRef Name="idUsluga" />
+    </Key>
+    <Property Name="idUsluga" Type="int" Nullable="false" />
+    <Property Name="Naziv" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Trajanje" Type="int" Nullable="false" />
+    <Property Name="Cijena" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vlasnik">
+    <Key>
+      <PropertyRef Name="idVlasnik" />
+    </Key>
+    <Property Name="idVlasnik" Type="int" Nullable="false" />
+    <Property Name="Ime" Type="varchar" MaxLength="30" />
+    <Property Name="Prezime" Type="varchar" MaxLength="30" />
+    <Property Name="Spol" Type="varchar" MaxLength="10" />
+    <Property Name="Email" Type="varchar" MaxLength="30" />
+    <Property Name="BrojTelefona" Type="varchar" MaxLength="30" />
+    <Property Name="Username" Type="varchar" MaxLength="30" />
+    <Property Name="Lozinka" Type="varchar" MaxLength="30" />
+    <Property Name="idSalon" Type="int" />
+  </EntityType>
+  <Association Name="fk_cjenik">
+    <End Role="Cjenik" Type="Self.Cjenik" Multiplicity="1" />
+    <End Role="Akcija" Type="Self.Akcija" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cjenik">
+        <PropertyRef Name="idCjenik" />
+      </Principal>
+      <Dependent Role="Akcija">
+        <PropertyRef Name="IdCjenik" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cjenik_Salon">
+    <End Role="Salon" Type="Self.Salon" Multiplicity="1" />
+    <End Role="Cjenik" Type="Self.Cjenik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Salon">
+        <PropertyRef Name="idSalon" />
+      </Principal>
+      <Dependent Role="Cjenik">
+        <PropertyRef Name="idSalon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cjenik_Usluga">
+    <End Role="Usluga" Type="Self.Usluga" Multiplicity="1" />
+    <End Role="Cjenik" Type="Self.Cjenik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usluga">
+        <PropertyRef Name="idUsluga" />
+      </Principal>
+      <Dependent Role="Cjenik">
+        <PropertyRef Name="idUsluga" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_klijent">
+    <End Role="Klijent" Type="Self.Klijent" Multiplicity="0..1" />
+    <End Role="Termin" Type="Self.Termin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klijent">
+        <PropertyRef Name="idKlijent" />
+      </Principal>
+      <Dependent Role="Termin">
+        <PropertyRef Name="IdKlijent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_salon">
+    <End Role="Salon" Type="Self.Salon" Multiplicity="1" />
+    <End Role="Termin" Type="Self.Termin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Salon">
+        <PropertyRef Name="idSalon" />
+      </Principal>
+      <Dependent Role="Termin">
+        <PropertyRef Name="IdSalon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Salon_Grad">
+    <End Role="Grad" Type="Self.Grad" Multiplicity="0..1" />
+    <End Role="Salon" Type="Self.Salon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grad">
+        <PropertyRef Name="idGrad" />
+      </Principal>
+      <Dependent Role="Salon">
+        <PropertyRef Name="idGrad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Termin">
+    <End Role="Termin" Type="Self.Termin" Multiplicity="0..1" />
+    <End Role="Recenzija" Type="Self.Recenzija" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Termin">
+        <PropertyRef Name="idTermin" />
+      </Principal>
+      <Dependent Role="Recenzija">
+        <PropertyRef Name="IdTermin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Termin_Termin">
+    <End Role="Termin" Type="Self.Termin" Multiplicity="1" />
+    <End Role="Termin1" Type="Self.Termin" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Termin">
+        <PropertyRef Name="idTermin" />
+      </Principal>
+      <Dependent Role="Termin1">
+        <PropertyRef Name="idTermin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vlasnik_Salon">
+    <End Role="Salon" Type="Self.Salon" Multiplicity="0..1" />
+    <End Role="Vlasnik" Type="Self.Vlasnik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Salon">
+        <PropertyRef Name="idSalon" />
+      </Principal>
+      <Dependent Role="Vlasnik">
+        <PropertyRef Name="idSalon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PI2230_DBModelStoreContainer">
+    <EntitySet Name="Akcija" EntityType="Self.Akcija" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cjenik" EntityType="Self.Cjenik" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Grad" EntityType="Self.Grad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Klijent" EntityType="Self.Klijent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Recenzija" EntityType="Self.Recenzija" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Salon" EntityType="Self.Salon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Termin" EntityType="Self.Termin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usluga" EntityType="Self.Usluga" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vlasnik" EntityType="Self.Vlasnik" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_cjenik" Association="Self.fk_cjenik">
+      <End Role="Cjenik" EntitySet="Cjenik" />
+      <End Role="Akcija" EntitySet="Akcija" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cjenik_Salon" Association="Self.FK_Cjenik_Salon">
+      <End Role="Salon" EntitySet="Salon" />
+      <End Role="Cjenik" EntitySet="Cjenik" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cjenik_Usluga" Association="Self.FK_Cjenik_Usluga">
+      <End Role="Usluga" EntitySet="Usluga" />
+      <End Role="Cjenik" EntitySet="Cjenik" />
+    </AssociationSet>
+    <AssociationSet Name="fk_klijent" Association="Self.fk_klijent">
+      <End Role="Klijent" EntitySet="Klijent" />
+      <End Role="Termin" EntitySet="Termin" />
+    </AssociationSet>
+    <AssociationSet Name="fk_salon" Association="Self.fk_salon">
+      <End Role="Salon" EntitySet="Salon" />
+      <End Role="Termin" EntitySet="Termin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Salon_Grad" Association="Self.FK_Salon_Grad">
+      <End Role="Grad" EntitySet="Grad" />
+      <End Role="Salon" EntitySet="Salon" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Termin" Association="Self.fk_Termin">
+      <End Role="Termin" EntitySet="Termin" />
+      <End Role="Recenzija" EntitySet="Recenzija" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Termin_Termin" Association="Self.FK_Termin_Termin">
+      <End Role="Termin" EntitySet="Termin" />
+      <End Role="Termin1" EntitySet="Termin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vlasnik_Salon" Association="Self.FK_Vlasnik_Salon">
+      <End Role="Salon" EntitySet="Salon" />
+      <End Role="Vlasnik" EntitySet="Vlasnik" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
