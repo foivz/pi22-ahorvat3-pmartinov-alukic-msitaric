@@ -25,3 +25,14 @@ C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\Bookfr
 C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\obj\Debug\BookfrizApp.csproj.CoreCompileInputs.cache
 C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\obj\Debug\BookfrizApp.exe
 C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\obj\Debug\BookfrizApp.pdb
+C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\bin\Debug\BookfrizApp.exe.config
+C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\bin\Debug\BookfrizApp.exe
+C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\bin\Debug\BookfrizApp.pdb
+C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\bin\Debug\BazaPodataka.dll
+C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\bin\Debug\EntityFramework.dll
+C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\bin\Debug\BazaPodataka.pdb
+C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\bin\Debug\BazaPodataka.dll.config
+C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\bin\Debug\EntityFramework.xml
+C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\obj\Debug\BookfrizApp.csproj.CopyComplete
