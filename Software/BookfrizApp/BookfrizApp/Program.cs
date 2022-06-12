@@ -17,7 +17,8 @@ namespace BookfrizApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FormPrijava());
-            Application.Run(new FormProfilKlijenta());
+            //Application.Run(new FormProfilKlijenta());
+            Application.Run(new FormProfilSalona());
         }
     }
 }

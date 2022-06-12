@@ -49,6 +49,7 @@
             this.Odustani.TabIndex = 21;
             this.Odustani.Text = "Odustani";
             this.Odustani.UseVisualStyleBackColor = true;
+            this.Odustani.Click += new System.EventHandler(this.Odustani_Click);
             // 
             // btnSpremi
             // 
@@ -58,6 +59,7 @@
             this.btnSpremi.TabIndex = 20;
             this.btnSpremi.Text = "Spremi";
             this.btnSpremi.UseVisualStyleBackColor = true;
+            this.btnSpremi.Click += new System.EventHandler(this.btnSpremi_Click);
             // 
             // txtEmail
             // 
