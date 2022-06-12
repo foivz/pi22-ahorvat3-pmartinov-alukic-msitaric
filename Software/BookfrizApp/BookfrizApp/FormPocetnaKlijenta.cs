@@ -21,5 +21,11 @@ namespace BookfrizApp
             klijent = dohvaceniKlijent;
             lblImeKlijenta.Text = klijent.Ime;
         }
+
+        private void btnRegistracija_Click(object sender, EventArgs e)
+        {
+            Registracija registracija = new Registracija();
+            registracija.ShowDialog();
+        }
     }
 }
