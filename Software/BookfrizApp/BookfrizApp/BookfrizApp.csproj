@@ -55,11 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormObavijestiKlijenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormObavijestiKlijenta.Designer.cs">
+      <DependentUpon>FormObavijestiKlijenta.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPrijava.cs">
       <SubType>Form</SubType>
@@ -67,10 +67,40 @@
     <Compile Include="FormPrijava.Designer.cs">
       <DependentUpon>FormPrijava.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormProfilKlijenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProfilKlijenta.Designer.cs">
+      <DependentUpon>FormProfilKlijenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProfilSalona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProfilSalona.Designer.cs">
+      <DependentUpon>FormProfilSalona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPromjenaLozinke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPromjenaLozinke.Designer.cs">
+      <DependentUpon>FormPromjenaLozinke.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormObavijestiKlijenta.resx">
+      <DependentUpon>FormObavijestiKlijenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPrijava.resx">
       <DependentUpon>FormPrijava.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProfilKlijenta.resx">
+      <DependentUpon>FormProfilKlijenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProfilSalona.resx">
+      <DependentUpon>FormProfilSalona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPromjenaLozinke.resx">
+      <DependentUpon>FormPromjenaLozinke.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
