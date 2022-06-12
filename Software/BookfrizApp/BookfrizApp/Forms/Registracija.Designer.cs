@@ -50,6 +50,7 @@
             this.btnPrikazLozinka = new System.Windows.Forms.Button();
             this.btnPrikazPonovljena = new System.Windows.Forms.Button();
             this.btnSakrijPonovljena = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // label1
@@ -252,6 +253,11 @@
             this.btnSakrijPonovljena.UseVisualStyleBackColor = true;
             this.btnSakrijPonovljena.Click += new System.EventHandler(this.btnSakrijPonovljena_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\PC\\source\\repos\\pi22-ahorvat3-pmartinov-alukic-msitaric\\Software\\Bookfri" +
+    "zApp\\BookfrizApp\\Help\\registracija.htm";
+            // 
             // Registracija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -279,6 +285,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.helpProvider1.SetShowHelp(this, true);
             this.Name = "Registracija";
             this.Text = "Registracija";
             this.Load += new System.EventHandler(this.Registracija_Load_1);
@@ -311,6 +318,7 @@
         private System.Windows.Forms.Button btnPrikazLozinka;
         private System.Windows.Forms.Button btnPrikazPonovljena;
         private System.Windows.Forms.Button btnSakrijPonovljena;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }
 

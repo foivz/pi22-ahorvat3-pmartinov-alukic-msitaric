@@ -31,6 +31,7 @@
             this.dgvTrazilica = new System.Windows.Forms.DataGridView();
             this.btnCjenik = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrazilica)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,6 +65,11 @@
             this.btnOdustani.UseVisualStyleBackColor = true;
             this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\PC\\source\\repos\\pi22-ahorvat3-pmartinov-alukic-msitaric\\Software\\Bookfri" +
+    "zApp\\BookfrizApp\\Help\\trazilicaispis.htm";
+            // 
             // TrazilicaIspis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -73,6 +79,7 @@
             this.Controls.Add(this.btnCjenik);
             this.Controls.Add(this.dgvTrazilica);
             this.Name = "TrazilicaIspis";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Ispis tražilice";
             this.Load += new System.EventHandler(this.TrazilicaIspis_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrazilica)).EndInit();
@@ -85,5 +92,6 @@
         private System.Windows.Forms.DataGridView dgvTrazilica;
         private System.Windows.Forms.Button btnCjenik;
         private System.Windows.Forms.Button btnOdustani;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

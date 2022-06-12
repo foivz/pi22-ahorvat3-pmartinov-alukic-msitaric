@@ -21,15 +21,20 @@ namespace BookfrizApp.Forms
             else spol = null;
             Korisnik korisnik = new Korisnik(txtIme.Text, txtPrezime.Text, spol, txtBroj.Text, txtEmail.Text, txtLozinka.Text);
             repozitorij.korisnik = korisnik;
-            repozitorij.KreiranjeUserName();
             try
             {
+                if (txtIme.Text == "" || txtPrezime.Text == "" || txtEmail.Text == "" || txtBroj.Text == "" || txtLozinka.Text == "" || txtPonovljena.Text == "") throw new UnosException("Molimo unesite sve podatke!");
+                repozitorij.KreiranjeUserName();
                 repozitorij.ProvjeriPostojanje(txtEmail.Text);
                 ProvjeraSigurnosti();
                 ProvjeraIspravnostiPodataka();
                 repozitorij.DodajUBazu();
                 MessageBox.Show("Uspješno ste se registrirali!\n Vaš Username je " + repozitorij.korisnik.User + ". Možete ga provjeriti u osobnim podacima.", "Uspješna registracija");
                 Close();
+            }
+            catch (UnosException ex)
+            {
+                MessageBox.Show(ex.Poruka);
             }
             catch (PostojanjeException ex)
             {

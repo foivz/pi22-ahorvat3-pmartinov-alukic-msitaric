@@ -37,6 +37,7 @@
             this.btnTrazi = new System.Windows.Forms.Button();
             this.btnOsvježi = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // mapa
@@ -136,6 +137,11 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Pritisnite na salon ako ga želite otvoriti";
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\PC\\source\\repos\\pi22-ahorvat3-pmartinov-alukic-msitaric\\Software\\Bookfri" +
+    "zApp\\BookfrizApp\\Help\\popissalona.htm";
+            // 
             // SaloniUBlizini
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -151,6 +157,7 @@
             this.Controls.Add(this.txtUlica);
             this.Controls.Add(this.mapa);
             this.Name = "SaloniUBlizini";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Saloni u blizini";
             this.Load += new System.EventHandler(this.SaloniUBlizini_Load);
             this.ResumeLayout(false);
@@ -169,5 +176,6 @@
         private System.Windows.Forms.Button btnTrazi;
         private System.Windows.Forms.Button btnOsvježi;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }
