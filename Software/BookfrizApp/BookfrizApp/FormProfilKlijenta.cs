@@ -18,16 +18,6 @@ namespace BookfrizApp
         {
             InitializeComponent();
             klijent = prijavljeniKlijent;
-            klijent = new Klijent
-            {
-                Ime = "Kornelija",
-                Prezime = "Petunija",
-                Email = "kornelija@foi.hr",
-                Spol = "ženski",
-                BrojTelefona = "0987654321",
-                Username = "kor123",
-                Lozinka = "petunija123"
-            };
             PrikaziPodatke();
         }*/
 
