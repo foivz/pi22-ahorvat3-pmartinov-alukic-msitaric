@@ -9,6 +9,7 @@
 
 namespace BookfrizApp.Classes
 {
+    using BazaPodataka;
     using System;
     using System.Collections.Generic;
 

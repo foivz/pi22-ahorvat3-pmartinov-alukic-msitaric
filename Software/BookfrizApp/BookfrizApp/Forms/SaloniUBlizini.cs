@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using BazaPodataka;
 
 namespace BookfrizApp.Forms
 {
@@ -37,8 +38,8 @@ namespace BookfrizApp.Forms
         {
             using (var db = new PI2230_DBEntities())
             {
-                var query = (from s in db.Salon
-                             join g in db.Grad on s.idGrad equals g.idGrad
+                var query = (from s in db.Salons
+                             join g in db.Grads on s.idGrad equals g.idGrad
                              select ( new { s, g.Naziv })).ToList();
                 var popisSalona = query;
                 List<PointLatLng> tockeSalona = new List<PointLatLng>();
@@ -86,7 +87,7 @@ namespace BookfrizApp.Forms
             Salon salon = new Salon();
             using (var db=new PI2230_DBEntities())
             {
-                var query = (from s in db.Salon
+                var query = (from s in db.Salons
                              where s.idSalon == x
                              select s).ToList();
                 salon = query[0];

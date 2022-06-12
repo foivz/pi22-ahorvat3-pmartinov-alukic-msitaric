@@ -59,7 +59,7 @@ namespace BookfrizApp
                 {
                     obavijesti.obavijesti_jedan_sat_prije = 1;
                 }
-                con.Obavijestis.Add(obavijesti);
+                //con.Obavijestis.Add(obavijesti);
                 con.SaveChanges();
             }
         }

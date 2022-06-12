@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using BookfrizApp.Exceptions;
+using BazaPodataka;
 
 namespace BookfrizApp.Classes
 {
@@ -14,7 +15,7 @@ namespace BookfrizApp.Classes
             {
                 Klijent klijent = new Klijent
                 {
-                    idKlijent = db.Klijent.Count() + 1,
+                    idKlijent = db.Klijents.Count() + 1,
                     Ime = korisnik.Ime,
                     Prezime = korisnik.Prezime,
                     Spol = korisnik.Spol,
@@ -23,7 +24,7 @@ namespace BookfrizApp.Classes
                     Username = korisnik.User,
                     Lozinka = korisnik.Lozinka
                 };
-                db.Klijent.Add(klijent);
+                db.Klijents.Add(klijent);
                 db.SaveChanges();
             }
         }
@@ -31,7 +32,7 @@ namespace BookfrizApp.Classes
         {
             using (var db = new PI2230_DBEntities())
             {
-                List<Klijent> klijenti = db.Klijent.ToList();
+                List<Klijent> klijenti = db.Klijents.ToList();
                 foreach (Klijent i in klijenti)
                 {
                     if (i.Email == email) throw new PostojanjeException("E-mail već postoji u bazi!"); ;
@@ -45,7 +46,7 @@ namespace BookfrizApp.Classes
             using (var db = new PI2230_DBEntities())
             {
                 bool sadrzi = false;
-                List<Klijent> klijenti = db.Klijent.ToList();
+                List<Klijent> klijenti = db.Klijents.ToList();
                 for (int i = 1; i < 1000; i++)
                 {
                     foreach (Klijent j in klijenti)
@@ -79,11 +80,11 @@ namespace BookfrizApp.Classes
             using (var db = new PI2230_DBEntities())
             {
                 bool proslo = false;
-                List<Salon> frizerskisalon = db.Salon.ToList();
+                List<Salon> frizerskisalon = db.Salons.ToList();
                 if (grad != null)
                 {
-                    var query = (from s in db.Salon
-                                 join g in db.Grad on s.idGrad equals g.idGrad
+                    var query = (from s in db.Salons
+                                 join g in db.Grads on s.idGrad equals g.idGrad
                                  where g.idGrad == grad.idGrad
                                  select s).ToList();
                     konacno = query;
@@ -91,9 +92,9 @@ namespace BookfrizApp.Classes
                 }
                 if (usluga != null)
                 {
-                    var query = (from s in db.Salon
-                                 join c in db.Cjenik on s.idSalon equals c.idSalon
-                                 join u in db.Usluga on c.idUsluga equals u.idUsluga
+                    var query = (from s in db.Salons
+                                 join c in db.Cjeniks on s.idSalon equals c.idSalon
+                                 join u in db.Uslugas on c.idUsluga equals u.idUsluga
                                  where u.Naziv == usluga
                                  select s).ToList();
                     if (proslo)
@@ -106,9 +107,9 @@ namespace BookfrizApp.Classes
                         proslo = true;
                     }
                 }
-                var query1 = (from s in db.Salon
-                              join c in db.Cjenik on s.idSalon equals c.idSalon
-                              join u in db.Usluga on c.idUsluga equals u.idUsluga
+                var query1 = (from s in db.Salons
+                              join c in db.Cjeniks on s.idSalon equals c.idSalon
+                              join u in db.Uslugas on c.idUsluga equals u.idUsluga
                               where u.Cijena >= cijenaOd
                               where u.Cijena <= cijenaDo
                               where s.Ocjena >= minOcjena
@@ -131,8 +132,8 @@ namespace BookfrizApp.Classes
             {
                 if (usluga != null)
                 {
-                    var query = (from u in db.Usluga
-                                 join c in db.Cjenik on u.idUsluga equals c.idUsluga
+                    var query = (from u in db.Uslugas
+                                 join c in db.Cjeniks on u.idUsluga equals c.idUsluga
                                  where c.idSalon == salon.idSalon
                                  where u.Naziv == usluga
                                  where u.Cijena>=cijenaOd
@@ -141,8 +142,8 @@ namespace BookfrizApp.Classes
                     return query;
                 }
 
-                var query1 = (from u in db.Usluga
-                              join c in db.Cjenik on u.idUsluga equals c.idUsluga
+                var query1 = (from u in db.Uslugas
+                              join c in db.Cjeniks on u.idUsluga equals c.idUsluga
                               where c.idSalon == salon.idSalon
                               where u.Cijena >= cijenaOd
                               where u.Cijena <= cijenaDo 

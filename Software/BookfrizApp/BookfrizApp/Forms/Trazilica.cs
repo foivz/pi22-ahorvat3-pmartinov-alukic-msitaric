@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using BookfrizApp.Exceptions;
+using BazaPodataka;
 
 namespace BookfrizApp.Forms
 {
@@ -29,13 +30,13 @@ namespace BookfrizApp.Forms
             txtCijenaDo.Text = "250";
             using (var db = new PI2230_DBEntities())
             {
-                var query = (from g in db.Grad
+                var query = (from g in db.Grads
                              select g).ToList();
                 foreach (var i in query)
                 {
                     cmbGrad.Items.Add(i.Naziv);
                 }
-                var queryy = (from u in db.Usluga
+                var queryy = (from u in db.Uslugas
                               select u).ToList();
                 List<string> x = new List<string>();
                 x.Add("-");
@@ -61,7 +62,7 @@ namespace BookfrizApp.Forms
             {
                 using (var db = new PI2230_DBEntities())
                 {
-                    var query = (from g in db.Grad
+                    var query = (from g in db.Grads
                                  where g.Naziv == cmbGrad.SelectedItem.ToString()
                                  select g).ToList();
                     grad = query[0];
@@ -79,7 +80,7 @@ namespace BookfrizApp.Forms
             {
                 using (var db = new PI2230_DBEntities())
                 {
-                    var query = (from u in db.Usluga
+                    var query = (from u in db.Uslugas
                                  where u.Naziv == cmbUsluga.SelectedItem.ToString()
                                  select u).ToList();
                     usluga = query[0].Naziv;
@@ -88,9 +89,9 @@ namespace BookfrizApp.Forms
             try
             {
                 List<Salon> saloni = repozitorij.DohvatiPodatke(grad, (float)(Convert.ToDouble(numOcjena.Value)), usluga, trackCijenaOd.Value, trackCijenaDo.Value);
-                TrazilicaIspis trazilicaIspis = new TrazilicaIspis(saloni, usluga, trackCijenaOd.Value, trackCijenaDo.Value);
-                Close();
+                TrazilicaIspis trazilicaIspis = new TrazilicaIspis(saloni, usluga, trackCijenaOd.Value, trackCijenaDo.Value,this);
                 trazilicaIspis.ShowDialog();
+                
             }
             catch(TrazilicaException ex)
             {
