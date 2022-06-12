@@ -4,21 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="54a8cd3b69a74de0975da1f5e781e68e" Name="Diagram1">
-        <EntityTypeShape EntityType="PI2230_DBModel.Akcija" Width="1.5" PointX="7.5" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="PI2230_DBModel.Cjenik" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PI2230_DBModel.Grad" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="PI2230_DBModel.Klijent" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PI2230_DBModel.Recenzija" Width="1.5" PointX="10.5" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PI2230_DBModel.Salon" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="PI2230_DBModel.Termin" Width="1.5" PointX="8.25" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="PI2230_DBModel.Usluga" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PI2230_DBModel.Vlasnik" Width="1.5" PointX="5.25" PointY="11.25" IsExpanded="true" />
+      <Diagram DiagramId="a724f108ff65443b9dc72d859746126d" Name="Diagram1">
+        <EntityTypeShape EntityType="PI2230_DBModel.Akcija" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2230_DBModel.Cjenik" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2230_DBModel.Grad" Width="1.5" PointX="1.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2230_DBModel.Klijent" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2230_DBModel.Recenzija" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2230_DBModel.Salon" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2230_DBModel.Termin" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2230_DBModel.Usluga" Width="1.5" PointX="0.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2230_DBModel.Vlasnik" Width="1.5" PointX="3" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2230_DBModel.Obavijesti" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
         <AssociationConnector Association="PI2230_DBModel.fk_cjenik" ManuallyRouted="false" />
         <AssociationConnector Association="PI2230_DBModel.FK_Cjenik_Salon" ManuallyRouted="false" />
         <AssociationConnector Association="PI2230_DBModel.FK_Cjenik_Usluga" ManuallyRouted="false" />
         <AssociationConnector Association="PI2230_DBModel.FK_Salon_Grad" ManuallyRouted="false" />
         <AssociationConnector Association="PI2230_DBModel.fk_klijent" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2230_DBModel.FK_Obavijesti_Klijent" ManuallyRouted="false" />
         <AssociationConnector Association="PI2230_DBModel.fk_Termin" ManuallyRouted="false" />
         <AssociationConnector Association="PI2230_DBModel.fk_salon" ManuallyRouted="false" />
         <AssociationConnector Association="PI2230_DBModel.FK_Vlasnik_Salon" ManuallyRouted="false" />

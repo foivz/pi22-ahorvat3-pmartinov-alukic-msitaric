@@ -31,5 +31,6 @@ namespace BazaPodataka
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Termin> Termins { get; set; }
+        public virtual Obavijesti Obavijesti { get; set; }
     }
 }

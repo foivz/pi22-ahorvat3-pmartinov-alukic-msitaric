@@ -34,5 +34,6 @@ namespace BazaPodataka
         public virtual DbSet<Termin> Termins { get; set; }
         public virtual DbSet<Usluga> Uslugas { get; set; }
         public virtual DbSet<Vlasnik> Vlasniks { get; set; }
+        public virtual DbSet<Obavijesti> Obavijestis { get; set; }
     }
 }

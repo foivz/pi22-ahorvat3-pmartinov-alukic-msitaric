@@ -44,6 +44,18 @@
           <Property Name="Username" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Lozinka" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PI2230_DB.dbo.Obavijesti' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Obavijesti">
+          <Key>
+            <PropertyRef Name="id_klijenta" />
+          </Key>
+          <Property Name="id_klijenta" Type="int" Nullable="false" />
+          <Property Name="sve_obavijesti" Type="int" />
+          <Property Name="obavijesti_jedan_dan_prije" Type="int" />
+          <Property Name="obavijesti_jedan_sat_prije" Type="int" />
+          <Property Name="bez_obavijesti" Type="int" />
+        </EntityType>
         <EntityType Name="Recenzija">
           <Key>
             <PropertyRef Name="IdRecenzija" />
@@ -146,6 +158,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Obavijesti_Klijent">
+          <End Role="Klijent" Type="Self.Klijent" Multiplicity="1" />
+          <End Role="Obavijesti" Type="Self.Obavijesti" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Klijent">
+              <PropertyRef Name="idKlijent" />
+            </Principal>
+            <Dependent Role="Obavijesti">
+              <PropertyRef Name="id_klijenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_salon">
           <End Role="Salon" Type="Self.Salon" Multiplicity="1" />
           <End Role="Termin" Type="Self.Termin" Multiplicity="*" />
@@ -216,6 +240,15 @@
           <EntitySet Name="Termin" EntityType="Self.Termin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usluga" EntityType="Self.Usluga" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vlasnik" EntityType="Self.Vlasnik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Obavijesti" EntityType="Self.Obavijesti" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Obavijesti].[id_klijenta] AS [id_klijenta], 
+    [Obavijesti].[sve_obavijesti] AS [sve_obavijesti], 
+    [Obavijesti].[obavijesti_jedan_dan_prije] AS [obavijesti_jedan_dan_prije], 
+    [Obavijesti].[obavijesti_jedan_sat_prije] AS [obavijesti_jedan_sat_prije], 
+    [Obavijesti].[bez_obavijesti] AS [bez_obavijesti]
+    FROM [dbo].[Obavijesti] AS [Obavijesti]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="fk_cjenik" Association="Self.fk_cjenik">
             <End Role="Cjenik" EntitySet="Cjenik" />
             <End Role="Akcija" EntitySet="Akcija" />
@@ -231,6 +264,10 @@
           <AssociationSet Name="fk_klijent" Association="Self.fk_klijent">
             <End Role="Klijent" EntitySet="Klijent" />
             <End Role="Termin" EntitySet="Termin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Obavijesti_Klijent" Association="Self.FK_Obavijesti_Klijent">
+            <End Role="Klijent" EntitySet="Klijent" />
+            <End Role="Obavijesti" EntitySet="Obavijesti" />
           </AssociationSet>
           <AssociationSet Name="fk_salon" Association="Self.fk_salon">
             <End Role="Salon" EntitySet="Salon" />
@@ -302,6 +339,7 @@
           <Property Name="Username" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Lozinka" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Termins" Relationship="Self.fk_klijent" FromRole="Klijent" ToRole="Termin" />
+          <NavigationProperty Name="Obavijesti" Relationship="Self.FK_Obavijesti_Klijent" FromRole="Klijent" ToRole="Obavijesti" />
         </EntityType>
         <EntityType Name="Recenzija">
           <Key>
@@ -369,6 +407,17 @@
           <Property Name="idSalon" Type="Int32" />
           <NavigationProperty Name="Salon" Relationship="Self.FK_Vlasnik_Salon" FromRole="Vlasnik" ToRole="Salon" />
         </EntityType>
+        <EntityType Name="Obavijesti">
+          <Key>
+            <PropertyRef Name="id_klijenta" />
+          </Key>
+          <Property Name="id_klijenta" Type="Int32" Nullable="false" />
+          <Property Name="sve_obavijesti" Type="Int32" />
+          <Property Name="obavijesti_jedan_dan_prije" Type="Int32" />
+          <Property Name="obavijesti_jedan_sat_prije" Type="Int32" />
+          <Property Name="bez_obavijesti" Type="Int32" />
+          <NavigationProperty Name="Klijent" Relationship="Self.FK_Obavijesti_Klijent" FromRole="Obavijesti" ToRole="Klijent" />
+        </EntityType>
         <Association Name="fk_cjenik">
           <End Role="Cjenik" Type="Self.Cjenik" Multiplicity="1" />
           <End Role="Akcija" Type="Self.Akcija" Multiplicity="*" />
@@ -426,6 +475,18 @@
             </Principal>
             <Dependent Role="Termin">
               <PropertyRef Name="IdKlijent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Obavijesti_Klijent">
+          <End Role="Klijent" Type="Self.Klijent" Multiplicity="1" />
+          <End Role="Obavijesti" Type="Self.Obavijesti" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Klijent">
+              <PropertyRef Name="idKlijent" />
+            </Principal>
+            <Dependent Role="Obavijesti">
+              <PropertyRef Name="id_klijenta" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -487,6 +548,7 @@
           <EntitySet Name="Termins" EntityType="Self.Termin" />
           <EntitySet Name="Uslugas" EntityType="Self.Usluga" />
           <EntitySet Name="Vlasniks" EntityType="Self.Vlasnik" />
+          <EntitySet Name="Obavijestis" EntityType="Self.Obavijesti" />
           <AssociationSet Name="fk_cjenik" Association="Self.fk_cjenik">
             <End Role="Cjenik" EntitySet="Cjeniks" />
             <End Role="Akcija" EntitySet="Akcijas" />
@@ -506,6 +568,10 @@
           <AssociationSet Name="fk_klijent" Association="Self.fk_klijent">
             <End Role="Klijent" EntitySet="Klijents" />
             <End Role="Termin" EntitySet="Termins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Obavijesti_Klijent" Association="Self.FK_Obavijesti_Klijent">
+            <End Role="Klijent" EntitySet="Klijents" />
+            <End Role="Obavijesti" EntitySet="Obavijestis" />
           </AssociationSet>
           <AssociationSet Name="fk_Termin" Association="Self.fk_Termin">
             <End Role="Termin" EntitySet="Termins" />
@@ -629,6 +695,17 @@
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
                 <ScalarProperty Name="idSalon" ColumnName="idSalon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Obavijestis">
+            <EntityTypeMapping TypeName="PI2230_DBModel.Obavijesti">
+              <MappingFragment StoreEntitySet="Obavijesti">
+                <ScalarProperty Name="id_klijenta" ColumnName="id_klijenta" />
+                <ScalarProperty Name="sve_obavijesti" ColumnName="sve_obavijesti" />
+                <ScalarProperty Name="obavijesti_jedan_dan_prije" ColumnName="obavijesti_jedan_dan_prije" />
+                <ScalarProperty Name="obavijesti_jedan_sat_prije" ColumnName="obavijesti_jedan_sat_prije" />
+                <ScalarProperty Name="bez_obavijesti" ColumnName="bez_obavijesti" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
