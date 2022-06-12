@@ -17,3 +17,11 @@ C:\Users\38591\source\repos\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\Boo
 C:\Users\38591\source\repos\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\38591\source\repos\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\obj\Debug\BookfrizApp.FormPrijava.resources
 C:\Users\38591\source\repos\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\obj\Debug\BookfrizApp.csproj.CopyComplete
+C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\obj\Debug\BookfrizApp.csproj.AssemblyReference.cache
+C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\obj\Debug\BookfrizApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\obj\Debug\BookfrizApp.FormPrijava.resources
+C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\obj\Debug\BookfrizApp.Properties.Resources.resources
+C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\obj\Debug\BookfrizApp.csproj.GenerateResource.cache
+C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\obj\Debug\BookfrizApp.csproj.CoreCompileInputs.cache
+C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\obj\Debug\BookfrizApp.exe
+C:\Users\38591\Documents\pi22-ahorvat3-pmartinov-alukic-msitaric\Software\BookfrizApp\BookfrizApp\obj\Debug\BookfrizApp.pdb
