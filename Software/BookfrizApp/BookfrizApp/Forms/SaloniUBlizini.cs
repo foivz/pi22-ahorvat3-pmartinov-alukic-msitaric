@@ -92,7 +92,10 @@ namespace BookfrizApp.Forms
                              select s).ToList();
                 salon = query[0];
             }
-            //otvori taj salon
+            NarucivanjeForm narucivanjeForm = new NarucivanjeForm(Klijent.idKlijent, null, Salon.Naziv);
+            Console.WriteLine(Usluga);
+            Hide();
+            narucivanjeForm.ShowDialog();
         }
     }
 }
