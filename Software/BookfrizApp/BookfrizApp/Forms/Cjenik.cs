@@ -32,7 +32,6 @@ namespace BookfrizApp.Forms
         private void btnRezervacija_Click(object sender, EventArgs e)
         {
             NarucivanjeForm narucivanjeForm = new NarucivanjeForm(Klijent.idKlijent, Usluga, Salon.Naziv);
-            Console.WriteLine(Usluga);
             Hide();
             narucivanjeForm.ShowDialog();
             

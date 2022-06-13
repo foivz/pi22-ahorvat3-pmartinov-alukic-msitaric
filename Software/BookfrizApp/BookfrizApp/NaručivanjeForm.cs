@@ -22,6 +22,7 @@ namespace BookfrizApp
             InitializeComponent();
             salon = salonNaziv;
             usluga = uslugaNaziv;
+            idKlijenta = idklijenta;
         }
 
         private void Naručivanje_Load(object sender, EventArgs e)
@@ -32,6 +33,11 @@ namespace BookfrizApp
             
             comboBoxSaloni.SelectedItem = salon;
             comboBoxUsluge.SelectedItem = usluga;
+            if (usluga == null)
+            {
+                comboBoxUsluge.SelectedItem = "Sve usluge";
+            }
+            osvjezi();
                         
         }
 
