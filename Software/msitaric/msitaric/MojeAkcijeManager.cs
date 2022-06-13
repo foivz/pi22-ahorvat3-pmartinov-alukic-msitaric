@@ -13,10 +13,10 @@ namespace msitaric
         {
             using (var context = new PI2230_DBEntities())
             {
-                var query = from a in context.Akcijas
-                            join c in context.Cjeniks on a.IdCjenik equals c.idCjenik
-                            join s in context.Salons on c.idSalon equals s.idSalon
+                var query = from s in context.Salons
                             where s.Naziv == NazivSalona
+                            join c in context.Cjeniks on s.idSalon equals c.idSalon
+                            join a in context.Akcijas on c.idCjenik equals a.IdCjenik                            
                             select new MojeAkcije
                             {
                                 idAkcije = a.IdAkcija,

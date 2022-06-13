@@ -33,6 +33,7 @@
             this.buttonDodajAkciju = new System.Windows.Forms.Button();
             this.buttonObrisiAkciju = new System.Windows.Forms.Button();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.buttonNatrag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMojeAkcije)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,11 +79,22 @@
             this.helpProvider1.HelpNamespace = "C:\\Users\\Matej\\Documents\\PI_Projekt\\Software\\BookfrizApp\\BookfrizApp\\Help\\pregled" +
     "akcija.htm";
             // 
+            // buttonNatrag
+            // 
+            this.buttonNatrag.Location = new System.Drawing.Point(31, 292);
+            this.buttonNatrag.Name = "buttonNatrag";
+            this.buttonNatrag.Size = new System.Drawing.Size(82, 36);
+            this.buttonNatrag.TabIndex = 4;
+            this.buttonNatrag.Text = "Natrag";
+            this.buttonNatrag.UseVisualStyleBackColor = true;
+            this.buttonNatrag.Click += new System.EventHandler(this.buttonNatrag_Click);
+            // 
             // MojeAkcijeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(538, 350);
+            this.Controls.Add(this.buttonNatrag);
             this.Controls.Add(this.buttonObrisiAkciju);
             this.Controls.Add(this.buttonDodajAkciju);
             this.Controls.Add(this.label1);
@@ -104,5 +116,6 @@
         private System.Windows.Forms.Button buttonDodajAkciju;
         private System.Windows.Forms.Button buttonObrisiAkciju;
         private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.Button buttonNatrag;
     }
 }
