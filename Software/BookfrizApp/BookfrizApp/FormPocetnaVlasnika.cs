@@ -15,14 +15,16 @@ namespace BookfrizApp
     {
         Vlasnik vlasnik = new Vlasnik();
         Baza baza = new Baza();
-        
+        Salon salon;
+
+
         public FormPocetnaVlasnika(FormPrijava forma, Vlasnik dohvaceniVlasnik)
         {
             InitializeComponent();
             forma.Hide();
             vlasnik = dohvaceniVlasnik;
 
-            Salon salon = baza.DohvatiSalon(vlasnik.idSalon);
+            salon = baza.DohvatiSalon(vlasnik.idSalon);
             lblNazivSalona.Text = salon.Naziv;
         }
 
@@ -35,7 +37,7 @@ namespace BookfrizApp
 
         private void buttonPostaviAkcije_Click(object sender, EventArgs e)
         {
-            MojeAkcijeForm mojeAkcijeForm = new MojeAkcijeForm();
+            MojeAkcijeForm mojeAkcijeForm = new MojeAkcijeForm(salon);
             mojeAkcijeForm.ShowDialog();
         }
     }

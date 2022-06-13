@@ -31,7 +31,7 @@ namespace BookfrizApp
 
         private void DodajNovuAkcijuForm_Load(object sender, EventArgs e)
         {
-            comboBoxUsluga.DataSource = MojeAkcijeManager.DohvatiUslugeSalona(2);
+            comboBoxUsluga.DataSource = MojeAkcijeManager.DohvatiUslugeSalona(idSalona);
         }
 
         private void buttonOdustani_Click(object sender, EventArgs e)
