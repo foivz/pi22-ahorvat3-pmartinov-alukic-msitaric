@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6b0df6e8bfe64b6b9edb547f225ffa38" Name="Diagram1">
+        <EntityTypeShape EntityType="PI2230_DBModel.Akcija" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2230_DBModel.Cjenik" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2230_DBModel.Klijent" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2230_DBModel.Recenzija" Width="1.5" PointX="8.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2230_DBModel.Salon" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2230_DBModel.Termin" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PI2230_DBModel.Usluga" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="PI2230_DBModel.fk_cjenik" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2230_DBModel.FK_Cjenik_Salon" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2230_DBModel.FK_Cjenik_Usluga" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2230_DBModel.fk_klijent" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2230_DBModel.fk_Termin" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2230_DBModel.fk_salon" ManuallyRouted="false" />
+        <AssociationConnector Association="PI2230_DBModel.FK_Termin_Termin" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
