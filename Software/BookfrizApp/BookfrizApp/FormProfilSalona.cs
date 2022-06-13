@@ -15,24 +15,16 @@ namespace BookfrizApp
     {
         Salon salon = new Salon();
         Baza baza = new Baza();
-        /*public FormProfilSalona()
-        {
-            InitializeComponent();
-            salon.idSalon = 22;
-            salon.Naziv = "Albina";
-            salon.Adresa = "Adresa 123";
-            salon.BrojTelefona = "123456";
-            salon.Email = "albina@gmail.com";
-            salon.idGrad = 1;
-            salon.Ocjena = 3;
-            PrikaziPodatke();
-        }*/
+
         public FormProfilSalona(Salon selektiraniSalon)
         {
             InitializeComponent();
+            salon = selektiraniSalon;
+            PrikaziPodatke(salon);
         }
-        public void PrikaziPodatke()
+        public void PrikaziPodatke(Salon selektiraniSalon)
         {
+            salon = selektiraniSalon;
             txtAdresaSalona.Text = salon.Adresa;
             txtBrojTelefona.Text = salon.BrojTelefona;
             txtEmail.Text = salon.Email;
@@ -40,8 +32,18 @@ namespace BookfrizApp
         }
 
         private void btnSpremi_Click(object sender, EventArgs e)
-        {
-            
+        {          
+            Salon azuriraniSalon = new Salon();
+
+            azuriraniSalon.Naziv = txtNazivSalona.Text;
+            azuriraniSalon.Adresa = txtAdresaSalona.Text;
+            azuriraniSalon.BrojTelefona = txtBrojTelefona.Text;
+            azuriraniSalon.Email = txtEmail.Text;
+
+            baza.AzurirajSalon(azuriraniSalon);
+            MessageBox.Show("Podatci su uspješno spremljeni!");
+
+            PrikaziPodatke(azuriraniSalon);
         }
 
         private void Odustani_Click(object sender, EventArgs e)

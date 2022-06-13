@@ -52,5 +52,17 @@ namespace BookfrizApp
             SaloniUBlizini saloniUBlizini = new SaloniUBlizini();
             saloniUBlizini.ShowDialog();
         }
+
+        private void btnProfil_Click(object sender, EventArgs e)
+        {
+            FormProfilKlijenta forma = new FormProfilKlijenta(klijent);
+            forma.ShowDialog();
+        }
+
+        private void btnObavijesti_Click_1(object sender, EventArgs e)
+        {
+            FormObavijestiKlijenta forma = new FormObavijestiKlijenta(klijent);
+            forma.ShowDialog();
+        }
     }
 }

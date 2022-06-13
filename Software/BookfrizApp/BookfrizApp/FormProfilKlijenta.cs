@@ -14,33 +14,17 @@ namespace BookfrizApp
     public partial class FormProfilKlijenta : Form
     {
         Klijent klijent = new Klijent();
+        Baza baza = new Baza();
         public FormProfilKlijenta(Klijent prijavljeniKlijent)
         {
             InitializeComponent();
             klijent = prijavljeniKlijent;
-            PrikaziPodatke();
+            PrikaziPodatke(klijent);
         }
 
-        //za testiranje
-        /*public FormProfilKlijenta()
+        private void PrikaziPodatke(Klijent prikaziKlijent)
         {
-            InitializeComponent();
-            klijent = new Klijent
-            {
-                Ime = "Kornelija",
-                Prezime = "Petunija",
-                Email = "kornelija@foi.hr",
-                Spol = "ženski",
-                BrojTelefona = "0987654321",
-                Username = "kor123",
-                Lozinka = "petunija123"
-            };
-            PrikaziPodatke();
-        }*/
-
-
-        private void PrikaziPodatke()
-        {
+            Klijent klijent = prikaziKlijent;
             txtIme.Text = klijent.Ime;
             txtPrezime.Text = klijent.Prezime;
             txtEmail.Text = klijent.Email;
@@ -53,15 +37,25 @@ namespace BookfrizApp
         {
             FormPromjenaLozinke forma = new FormPromjenaLozinke(klijent);
             forma.ShowDialog();
-            PrikaziPodatke();
+            PrikaziPodatke(klijent);
         }
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
-            using (var con = new PI2230_DBEntities())
-            {
+            Klijent azuriraniKlijent = new Klijent();
 
-            }
+            azuriraniKlijent.idKlijent = klijent.idKlijent;
+            azuriraniKlijent.Ime = txtIme.Text;
+            azuriraniKlijent.Prezime = txtPrezime.Text;
+            azuriraniKlijent.Email = txtEmail.Text;
+            azuriraniKlijent.BrojTelefona = txtBrojTelefona.Text;
+            azuriraniKlijent.Username = txtKorisnickoIme.Text;
+            azuriraniKlijent.Spol = txtSpol.Text;
+
+            baza.AzurirajKlijenta(azuriraniKlijent);
+            MessageBox.Show("Podatci su uspješno spremljeni!");
+
+            PrikaziPodatke(azuriraniKlijent);
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)

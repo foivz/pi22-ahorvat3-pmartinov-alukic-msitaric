@@ -35,6 +35,8 @@
             this.txtStaraLozinka = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnPrikaziStaru = new System.Windows.Forms.Button();
+            this.btnPrikaziNovu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnOdustani
@@ -98,11 +100,33 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "PROMJENA LOZINKE";
             // 
+            // btnPrikaziStaru
+            // 
+            this.btnPrikaziStaru.Location = new System.Drawing.Point(285, 78);
+            this.btnPrikaziStaru.Name = "btnPrikaziStaru";
+            this.btnPrikaziStaru.Size = new System.Drawing.Size(75, 23);
+            this.btnPrikaziStaru.TabIndex = 14;
+            this.btnPrikaziStaru.Text = "Prikaži";
+            this.btnPrikaziStaru.UseVisualStyleBackColor = true;
+            this.btnPrikaziStaru.Click += new System.EventHandler(this.btnPrikaziStaru_Click);
+            // 
+            // btnPrikaziNovu
+            // 
+            this.btnPrikaziNovu.Location = new System.Drawing.Point(285, 118);
+            this.btnPrikaziNovu.Name = "btnPrikaziNovu";
+            this.btnPrikaziNovu.Size = new System.Drawing.Size(75, 23);
+            this.btnPrikaziNovu.TabIndex = 15;
+            this.btnPrikaziNovu.Text = "Prikaži";
+            this.btnPrikaziNovu.UseVisualStyleBackColor = true;
+            this.btnPrikaziNovu.Click += new System.EventHandler(this.btnPrikaziNovu_Click);
+            // 
             // FormPromjenaLozinke
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(309, 237);
+            this.ClientSize = new System.Drawing.Size(383, 237);
+            this.Controls.Add(this.btnPrikaziNovu);
+            this.Controls.Add(this.btnPrikaziStaru);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnSpremi);
             this.Controls.Add(this.txtNovaLozinka);
@@ -126,5 +150,7 @@
         private System.Windows.Forms.TextBox txtStaraLozinka;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnPrikaziStaru;
+        private System.Windows.Forms.Button btnPrikaziNovu;
     }
 }

@@ -87,11 +87,6 @@ namespace BazaPodataka
             return vlasnik;
         }
 
-        public void AzurirajKlijenta(Klijent klijent)
-        {
-            //dodati kod za azuriranje klijenta
-        }
-
         public Salon DohvatiSalon(int? idSalona)
         {
             Salon salon = new Salon();
@@ -106,6 +101,57 @@ namespace BazaPodataka
 
             return salon;
         }
-     
+
+        public void AzurirajKlijenta (Klijent klijent)
+        {
+            using (var con = new PI2230_DBEntities())
+            {
+                con.Klijents.Attach(klijent);
+                con.SaveChanges();
+            }
+        }
+
+        public void AzurirajLozinku(Klijent klijent, string lozinka)
+        {
+            using (var con = new PI2230_DBEntities())
+            {
+                con.Klijents.Attach(klijent);
+                klijent.Lozinka = lozinka;
+                con.SaveChanges();
+            }
+        }
+
+        public void AzurirajSalon(Salon salon)
+        {
+            using(var con = new PI2230_DBEntities())
+            {
+                con.Salons.Attach(salon);
+                con.SaveChanges();
+            }
+        }
+
+        public void DodajObavijesti(Obavijesti obavijesti)
+        {
+            using (var con = new PI2230_DBEntities())
+            {
+                con.Obavijestis.Attach(obavijesti);
+                con.SaveChanges();
+            }
+        }
+
+        public Obavijesti DohvatiObavijest(int idKlijenta)
+        {
+            Obavijesti novaObavijest = new Obavijesti();
+
+            using(var con = new PI2230_DBEntities())
+            {
+                var upit = from o in con.Obavijestis
+                           where o.id_klijenta == idKlijenta
+                           select o as Obavijesti;
+                novaObavijest = upit.FirstOrDefault();
+            }
+
+            return novaObavijest;
+        }
     }
 }

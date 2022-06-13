@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtKorisnickoIme = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnPrikazi = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label4
@@ -119,11 +120,22 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Korisničko ime:";
             // 
+            // btnPrikazi
+            // 
+            this.btnPrikazi.Location = new System.Drawing.Point(255, 105);
+            this.btnPrikazi.Name = "btnPrikazi";
+            this.btnPrikazi.Size = new System.Drawing.Size(75, 23);
+            this.btnPrikazi.TabIndex = 27;
+            this.btnPrikazi.Text = "Prikaži";
+            this.btnPrikazi.UseVisualStyleBackColor = true;
+            this.btnPrikazi.Click += new System.EventHandler(this.btnPrikazi_Click);
+            // 
             // FormPrijava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(269, 261);
+            this.ClientSize = new System.Drawing.Size(379, 261);
+            this.Controls.Add(this.btnPrikazi);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnRegistracija);
@@ -151,5 +163,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtKorisnickoIme;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnPrikazi;
     }
 }

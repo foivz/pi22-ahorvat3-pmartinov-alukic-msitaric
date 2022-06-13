@@ -20,6 +20,7 @@ namespace BookfrizApp
             InitializeComponent();
             lblRegistracija.Visible = false;
             btnRegistracija.Visible = false;
+            txtLozinka.UseSystemPasswordChar = true;
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)
@@ -64,5 +65,9 @@ namespace BookfrizApp
             registracija.ShowDialog();
         }
 
+        private void btnPrikazi_Click(object sender, EventArgs e)
+        {
+            txtLozinka.UseSystemPasswordChar = false;
+        }
     }
 }
