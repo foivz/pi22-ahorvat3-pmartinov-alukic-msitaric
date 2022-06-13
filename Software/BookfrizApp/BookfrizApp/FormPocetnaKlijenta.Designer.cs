@@ -31,6 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblImeKlijenta = new System.Windows.Forms.Label();
+            this.btnProfilKorisnika = new System.Windows.Forms.Button();
+            this.btnObavijesti = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -60,11 +62,33 @@
             this.lblImeKlijenta.TabIndex = 2;
             this.lblImeKlijenta.Text = "label3";
             // 
+            // btnProfilKorisnika
+            // 
+            this.btnProfilKorisnika.Location = new System.Drawing.Point(36, 108);
+            this.btnProfilKorisnika.Name = "btnProfilKorisnika";
+            this.btnProfilKorisnika.Size = new System.Drawing.Size(87, 23);
+            this.btnProfilKorisnika.TabIndex = 3;
+            this.btnProfilKorisnika.Text = "Profil korisnika";
+            this.btnProfilKorisnika.UseVisualStyleBackColor = true;
+            this.btnProfilKorisnika.Click += new System.EventHandler(this.btnProfilKorisnika_Click);
+            // 
+            // btnObavijesti
+            // 
+            this.btnObavijesti.Location = new System.Drawing.Point(139, 108);
+            this.btnObavijesti.Name = "btnObavijesti";
+            this.btnObavijesti.Size = new System.Drawing.Size(87, 23);
+            this.btnObavijesti.TabIndex = 4;
+            this.btnObavijesti.Text = "Obavijesti";
+            this.btnObavijesti.UseVisualStyleBackColor = true;
+            this.btnObavijesti.Click += new System.EventHandler(this.btnObavijesti_Click);
+            // 
             // FormPocetnaKlijenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnObavijesti);
+            this.Controls.Add(this.btnProfilKorisnika);
             this.Controls.Add(this.lblImeKlijenta);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -80,5 +104,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblImeKlijenta;
+        private System.Windows.Forms.Button btnProfilKorisnika;
+        private System.Windows.Forms.Button btnObavijesti;
     }
 }

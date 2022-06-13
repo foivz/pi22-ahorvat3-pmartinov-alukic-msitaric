@@ -21,5 +21,17 @@ namespace BookfrizApp
             klijent = dohvaceniKlijent;
             lblImeKlijenta.Text = klijent.Ime;
         }
+
+        private void btnProfilKorisnika_Click(object sender, EventArgs e)
+        {
+            FormProfilKlijenta forma = new FormProfilKlijenta(klijent);
+            forma.ShowDialog();
+        }
+
+        private void btnObavijesti_Click(object sender, EventArgs e)
+        {
+            FormObavijestiKlijenta forma = new FormObavijestiKlijenta(klijent);
+            forma.ShowDialog();
+        }
     }
 }

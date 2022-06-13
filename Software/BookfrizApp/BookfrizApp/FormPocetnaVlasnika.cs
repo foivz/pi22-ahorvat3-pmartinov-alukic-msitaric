@@ -15,6 +15,7 @@ namespace BookfrizApp
     {
         Vlasnik vlasnik = new Vlasnik();
         Baza baza = new Baza();
+        
         public FormPocetnaVlasnika(FormPrijava forma, Vlasnik dohvaceniVlasnik)
         {
             InitializeComponent();
@@ -22,8 +23,14 @@ namespace BookfrizApp
             vlasnik = dohvaceniVlasnik;
 
             Salon salon = baza.DohvatiSalon(vlasnik.idSalon);
-
             lblNazivSalona.Text = salon.Naziv;
+        }
+
+        private void btnProfilSalona_Click(object sender, EventArgs e)
+        {
+            Salon salon = baza.DohvatiSalon(vlasnik.idSalon);
+            FormProfilSalona forma = new FormProfilSalona(salon);
+            forma.ShowDialog();
         }
     }
 }

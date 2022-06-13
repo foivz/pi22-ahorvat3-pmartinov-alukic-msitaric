@@ -14,13 +14,13 @@ namespace BookfrizApp
     public partial class FormObavijestiKlijenta : Form
     {
         Klijent klijent = new Klijent();
-        /*public FormObavijestiKlijenta(Klijent prijavljeniKlijent)
+        public FormObavijestiKlijenta(Klijent prijavljeniKlijent)
         {
             InitializeComponent();
             klijent = prijavljeniKlijent;
-        }*/
+        }
 
-        public FormObavijestiKlijenta()
+        /*public FormObavijestiKlijenta()
         {
             InitializeComponent();
             klijent = new Klijent
@@ -33,7 +33,7 @@ namespace BookfrizApp
                 Username = "kor123",
                 Lozinka = "petunija123"
             };
-        }
+        }*/
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {

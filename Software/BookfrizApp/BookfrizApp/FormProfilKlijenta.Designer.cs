@@ -32,7 +32,6 @@
             this.btnOdustani = new System.Windows.Forms.Button();
             this.btnSpremi = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboSpol = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtKorisnickoIme = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.txtPrezime = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtSpol = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnPromjeniLozinku
@@ -85,14 +85,6 @@
             this.label8.Size = new System.Drawing.Size(31, 13);
             this.label8.TabIndex = 34;
             this.label8.Text = "Spol:";
-            // 
-            // comboSpol
-            // 
-            this.comboSpol.FormattingEnabled = true;
-            this.comboSpol.Location = new System.Drawing.Point(129, 193);
-            this.comboSpol.Name = "comboSpol";
-            this.comboSpol.Size = new System.Drawing.Size(100, 21);
-            this.comboSpol.TabIndex = 33;
             // 
             // label7
             // 
@@ -192,16 +184,23 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "PROFIL KLIJENTA";
             // 
+            // txtSpol
+            // 
+            this.txtSpol.Location = new System.Drawing.Point(129, 193);
+            this.txtSpol.Name = "txtSpol";
+            this.txtSpol.Size = new System.Drawing.Size(100, 20);
+            this.txtSpol.TabIndex = 38;
+            // 
             // FormProfilKlijenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(266, 450);
+            this.Controls.Add(this.txtSpol);
             this.Controls.Add(this.btnPromjeniLozinku);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.btnSpremi);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.comboSpol);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtKorisnickoIme);
             this.Controls.Add(this.label6);
@@ -227,7 +226,6 @@
         private System.Windows.Forms.Button btnOdustani;
         private System.Windows.Forms.Button btnSpremi;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboSpol;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtKorisnickoIme;
         private System.Windows.Forms.Label label6;
@@ -240,5 +238,6 @@
         private System.Windows.Forms.TextBox txtPrezime;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtSpol;
     }
 }

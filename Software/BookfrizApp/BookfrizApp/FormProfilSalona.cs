@@ -14,7 +14,8 @@ namespace BookfrizApp
     public partial class FormProfilSalona : Form
     {
         Salon salon = new Salon();
-        public FormProfilSalona()
+        Baza baza = new Baza();
+        /*public FormProfilSalona()
         {
             InitializeComponent();
             salon.idSalon = 22;
@@ -25,12 +26,11 @@ namespace BookfrizApp
             salon.idGrad = 1;
             salon.Ocjena = 3;
             PrikaziPodatke();
-        }
-        /*public FormProfilSalona(Salon selektiraniSalon)
+        }*/
+        public FormProfilSalona(Salon selektiraniSalon)
         {
             InitializeComponent();
-            salon = selektiraniSalon;
-        }*/
+        }
         public void PrikaziPodatke()
         {
             txtAdresaSalona.Text = salon.Adresa;
@@ -41,18 +41,7 @@ namespace BookfrizApp
 
         private void btnSpremi_Click(object sender, EventArgs e)
         {
-            using (var con = new PI2230_DBEntities())
-            {
-                con.Salons.Attach(salon);
-
-                salon.Email = txtEmail.Text;
-                salon.Adresa = txtAdresaSalona.Text;
-                salon.Naziv = txtNazivSalona.Text;
-                salon.BrojTelefona = txtBrojTelefona.Text;
-
-                con.SaveChanges();
-                MessageBox.Show("Podatci o salonu su uspješno ažurirani!");
-            }
+            
         }
 
         private void Odustani_Click(object sender, EventArgs e)

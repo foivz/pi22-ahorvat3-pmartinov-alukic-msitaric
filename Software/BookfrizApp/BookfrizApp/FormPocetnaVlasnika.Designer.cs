@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.lblNazivSalona = new System.Windows.Forms.Label();
+            this.btnProfilSalona = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -50,11 +51,22 @@
             this.lblNazivSalona.TabIndex = 2;
             this.lblNazivSalona.Text = "label2";
             // 
+            // btnProfilSalona
+            // 
+            this.btnProfilSalona.Location = new System.Drawing.Point(39, 178);
+            this.btnProfilSalona.Name = "btnProfilSalona";
+            this.btnProfilSalona.Size = new System.Drawing.Size(75, 23);
+            this.btnProfilSalona.TabIndex = 3;
+            this.btnProfilSalona.Text = "Profil salona";
+            this.btnProfilSalona.UseVisualStyleBackColor = true;
+            this.btnProfilSalona.Click += new System.EventHandler(this.btnProfilSalona_Click);
+            // 
             // FormPocetnaVlasnika
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnProfilSalona);
             this.Controls.Add(this.lblNazivSalona);
             this.Controls.Add(this.label1);
             this.Name = "FormPocetnaVlasnika";
@@ -68,5 +80,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNazivSalona;
+        private System.Windows.Forms.Button btnProfilSalona;
     }
 }

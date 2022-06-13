@@ -14,15 +14,15 @@ namespace BookfrizApp
     public partial class FormProfilKlijenta : Form
     {
         Klijent klijent = new Klijent();
-        /*public FormProfilKlijenta(Klijent prijavljeniKlijent)
+        public FormProfilKlijenta(Klijent prijavljeniKlijent)
         {
             InitializeComponent();
             klijent = prijavljeniKlijent;
             PrikaziPodatke();
-        }*/
+        }
 
         //za testiranje
-        public FormProfilKlijenta()
+        /*public FormProfilKlijenta()
         {
             InitializeComponent();
             klijent = new Klijent
@@ -36,7 +36,7 @@ namespace BookfrizApp
                 Lozinka = "petunija123"
             };
             PrikaziPodatke();
-        }
+        }*/
 
 
         private void PrikaziPodatke()
@@ -44,7 +44,7 @@ namespace BookfrizApp
             txtIme.Text = klijent.Ime;
             txtPrezime.Text = klijent.Prezime;
             txtEmail.Text = klijent.Email;
-            comboSpol.Text = klijent.Spol;
+            txtSpol.Text = klijent.Spol;
             txtBrojTelefona.Text = klijent.BrojTelefona;
             txtKorisnickoIme.Text = klijent.Username;
         }
