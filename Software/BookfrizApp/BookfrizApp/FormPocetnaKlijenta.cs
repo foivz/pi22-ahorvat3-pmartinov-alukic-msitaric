@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BazaPodataka;
+using BookfrizApp.Forms;
 
 namespace BookfrizApp
 {
@@ -32,6 +33,24 @@ namespace BookfrizApp
         {
             FormObavijestiKlijenta forma = new FormObavijestiKlijenta(klijent);
             forma.ShowDialog();
+        }
+
+        private void btnRegistracija_Click(object sender, EventArgs e)
+        {
+            Registracija registracija = new Registracija();
+            registracija.ShowDialog();
+        }
+
+        private void btnTrazilica_Click(object sender, EventArgs e)
+        {
+            Trazilica trazilica = new Trazilica();
+            trazilica.ShowDialog();
+        }
+
+        private void btnPopisSalona_Click(object sender, EventArgs e)
+        {
+            SaloniUBlizini saloniUBlizini = new SaloniUBlizini();
+            saloniUBlizini.ShowDialog();
         }
     }
 }

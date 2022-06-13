@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BazaPodataka;
+using BookfrizApp.Forms;
 
 namespace BookfrizApp
 {
@@ -34,7 +35,7 @@ namespace BookfrizApp
             if (baza.ProvjeriPostojiKlijent(korisnickoIme, lozinka))
             {
                 MessageBox.Show("Uspješna prijava!");
-                Klijent klijent = baza.DohvatiKlijenta(korisnickoIme, lozinka);
+                Klijent klijent= baza.DohvatiKlijenta(korisnickoIme, lozinka);
                 //otvaranje početne forme za klijenta
                 FormPocetnaKlijenta forma = new FormPocetnaKlijenta(this,klijent);
                 forma.ShowDialog();
@@ -59,7 +60,8 @@ namespace BookfrizApp
 
         private void btnRegistracija_Click(object sender, EventArgs e)
         {
-            // otvarnje forme za registraciju
+            Registracija registracija = new Registracija();
+            registracija.ShowDialog();
         }
 
     }
