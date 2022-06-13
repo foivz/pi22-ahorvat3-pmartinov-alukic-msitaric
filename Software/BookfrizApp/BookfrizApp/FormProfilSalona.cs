@@ -40,7 +40,7 @@ namespace BookfrizApp
             azuriraniSalon.BrojTelefona = txtBrojTelefona.Text;
             azuriraniSalon.Email = txtEmail.Text;
 
-            baza.AzurirajSalon(azuriraniSalon);
+            baza.AzurirajSalon(salon,azuriraniSalon);
             MessageBox.Show("Podatci su uspješno spremljeni!");
 
             PrikaziPodatke(azuriraniSalon);
