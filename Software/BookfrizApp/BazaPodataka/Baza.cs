@@ -131,6 +131,10 @@ namespace BazaPodataka
             using(var con = new PI2230_DBEntities())
             {
                 con.Salons.Attach(salon);
+                salon.Naziv = azuriraniSalon.Naziv;
+                salon.Adresa = azuriraniSalon.Adresa;
+                salon.BrojTelefona = azuriraniSalon.BrojTelefona;
+                salon.Email = azuriraniSalon.Email;
                 con.SaveChanges();
             }
         }
