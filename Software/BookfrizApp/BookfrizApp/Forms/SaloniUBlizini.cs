@@ -12,8 +12,10 @@ namespace BookfrizApp.Forms
 {
     public partial class SaloniUBlizini : Form
     {
-        public SaloniUBlizini()
+        Klijent Klijent=new Klijent();
+        public SaloniUBlizini(Klijent klijent)
         {
+            Klijent=klijent;
             InitializeComponent();
         }
         private GMapOverlay korisnik = new GMapOverlay("Korisnik");
@@ -93,7 +95,6 @@ namespace BookfrizApp.Forms
                 salon = query[0];
             }
             NarucivanjeForm narucivanjeForm = new NarucivanjeForm(Klijent.idKlijent, null, Salon.Naziv);
-            Console.WriteLine(Usluga);
             Hide();
             narucivanjeForm.ShowDialog();
         }
