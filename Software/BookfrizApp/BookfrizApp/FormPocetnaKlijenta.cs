@@ -86,7 +86,7 @@ namespace BookfrizApp
         private void btnOdjava_Click(object sender, EventArgs e)
         {
             FormPrijava formPrijava = new FormPrijava();
-            //Hide();
+            Hide();
             formPrijava.ShowDialog();
         }
     }
