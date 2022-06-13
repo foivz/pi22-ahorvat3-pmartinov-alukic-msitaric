@@ -49,7 +49,7 @@ namespace BookfrizApp
 
         private void btnPopisSalona_Click(object sender, EventArgs e)
         {
-            SaloniUBlizini saloniUBlizini = new SaloniUBlizini();
+            SaloniUBlizini saloniUBlizini = new SaloniUBlizini(klijent);
             saloniUBlizini.ShowDialog();
         }
 
