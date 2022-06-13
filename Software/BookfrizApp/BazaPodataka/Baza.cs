@@ -126,7 +126,7 @@ namespace BazaPodataka
             }
         }
 
-        public void AzurirajSalon(Salon salon)
+        public void AzurirajSalon(Salon salon,Salon azuriraniSalon)
         {
             using(var con = new PI2230_DBEntities())
             {
