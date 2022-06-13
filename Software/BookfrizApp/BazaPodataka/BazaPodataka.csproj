@@ -53,6 +53,7 @@
     <Compile Include="Akcija.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Akcija.partial.cs" />
     <Compile Include="Baza.cs" />
     <Compile Include="Cjenik.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -88,12 +89,14 @@
     <Compile Include="Salon.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Salon.partial.cs" />
     <Compile Include="Termin.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Usluga.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Usluga.partial.cs" />
     <Compile Include="Vlasnik.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

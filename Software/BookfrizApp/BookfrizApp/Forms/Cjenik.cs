@@ -11,7 +11,8 @@ namespace BookfrizApp.Forms
         private string Usluga;
         private int CijenaOd, CijenaDo;
         private TrazilicaIspis trazilicaIspis;
-        public Cjenik(Salon salon,string usluga,int cijenaOd,int cijenaDo,TrazilicaIspis trazilica)
+        private Klijent Klijent;
+        public Cjenik(Salon salon,string usluga,int cijenaOd,int cijenaDo,TrazilicaIspis trazilica, Klijent klijent)
         {
             Salon = salon;
             Usluga = usluga;
@@ -19,6 +20,7 @@ namespace BookfrizApp.Forms
             CijenaDo = cijenaDo;
             trazilicaIspis = trazilica;
             trazilicaIspis.Hide();
+            Klijent = klijent;
             InitializeComponent();
         }
         private void btnOdustani_Click(object sender, EventArgs e)
@@ -29,7 +31,11 @@ namespace BookfrizApp.Forms
 
         private void btnRezervacija_Click(object sender, EventArgs e)
         {
-            //odvedinarezervaciju
+            NarucivanjeForm narucivanjeForm = new NarucivanjeForm(Klijent.idKlijent, Usluga, Salon.Naziv);
+            Console.WriteLine(Usluga);
+            Hide();
+            narucivanjeForm.ShowDialog();
+            
         }
 
         private void Cjenik_Load(object sender, EventArgs e)

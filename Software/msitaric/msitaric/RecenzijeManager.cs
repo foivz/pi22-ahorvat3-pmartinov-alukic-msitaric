@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BazaPodataka;
 
 namespace msitaric
 {
@@ -13,9 +14,9 @@ namespace msitaric
             List<PrikazRecenzije> sveRecenzije;
             using (var context = new PI2230_DBEntities())
             {
-                var query = from t in context.Termin.Where(t => t.Datum >= DateTime.Now)
+                var query = from t in context.Termins
                             where t.IdKlijent == idKlijenta
-                            join r in context.Recenzija on t.idTermin equals r.IdTermin into prazno
+                            join r in context.Recenzijas on t.idTermin equals r.IdTermin into prazno
                             from x in prazno.DefaultIfEmpty()
                             select new PrikazRecenzije {                                
                                 idTermina = t.idTermin,

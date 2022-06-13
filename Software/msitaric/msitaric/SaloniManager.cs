@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BazaPodataka;
 
 namespace msitaric
 {
@@ -23,7 +24,7 @@ namespace msitaric
             popisSalona.Add("Svi saloni");
             using (var context = new PI2230_DBEntities())
             {
-                var query = from s in context.Salon
+                var query = from s in context.Salons
                             select s.Naziv;
 
                 popisSalona.AddRange(query.ToList());
@@ -36,7 +37,7 @@ namespace msitaric
             popisUsluga.Add("Sve usluge");
             using (var context = new PI2230_DBEntities())
             {
-                var query = from u in context.Usluga
+                var query = from u in context.Uslugas
                             select u.Naziv;
 
                 popisUsluga.AddRange(query.ToList());
@@ -49,17 +50,17 @@ namespace msitaric
             List<PopisTermina> sviSaloniIUsluge;
             using (var context = new PI2230_DBEntities())
             {
-                var query = from t in context.Termin
+                var query = from t in context.Termins
                             where t.Vrijeme.Hours == vrijeme
                             select t;
                 List<Termin> zauzetiTermini = query.ToList();
                 
                     if(salon=="Svi saloni" && usluga == "Sve usluge")
                     {
-                    var query2 = from c in context.Cjenik
-                                 join s in context.Salon on c.idSalon equals s.idSalon
-                                 join u in context.Usluga on c.idUsluga equals u.idUsluga
-                                 join a in context.Akcija on c.idCjenik equals a.IdCjenik into akcija
+                    var query2 = from c in context.Cjeniks
+                                 join s in context.Salons on c.idSalon equals s.idSalon
+                                 join u in context.Uslugas on c.idUsluga equals u.idUsluga
+                                 join a in context.Akcijas on c.idCjenik equals a.IdCjenik into akcija
                                  from ak in akcija.DefaultIfEmpty()
                                  select new PopisTermina
                                  {
@@ -80,11 +81,11 @@ namespace msitaric
 
                     if (usluga == "Sve usluge")
                     {
-                        var query2 = from c in context.Cjenik
-                                     join s in context.Salon on c.idSalon equals s.idSalon
-                                     join u in context.Usluga on c.idUsluga equals u.idUsluga
+                        var query2 = from c in context.Cjeniks
+                                     join s in context.Salons on c.idSalon equals s.idSalon
+                                     join u in context.Uslugas on c.idUsluga equals u.idUsluga
                                      where s.Naziv == salon
-                                     join a in context.Akcija on c.idCjenik equals a.IdCjenik into akcija
+                                     join a in context.Akcijas on c.idCjenik equals a.IdCjenik into akcija
                                      from ak in akcija.DefaultIfEmpty()
                                      select new PopisTermina
                                      {
@@ -101,11 +102,11 @@ namespace msitaric
 
                     if (salon == "Svi saloni")
                     {
-                        var query2 = from c in context.Cjenik
-                                     join s in context.Salon on c.idSalon equals s.idSalon
-                                     join u in context.Usluga on c.idUsluga equals u.idUsluga
+                        var query2 = from c in context.Cjeniks
+                                     join s in context.Salons on c.idSalon equals s.idSalon
+                                     join u in context.Uslugas on c.idUsluga equals u.idUsluga
                                      where u.Naziv == usluga
-                                     join a in context.Akcija on c.idCjenik equals a.IdCjenik into akcija
+                                     join a in context.Akcijas on c.idCjenik equals a.IdCjenik into akcija
                                      from ak in akcija.DefaultIfEmpty()
                                      select new PopisTermina
                                      {
@@ -120,11 +121,11 @@ namespace msitaric
                         return sviSaloniIUsluge;
                     }
 
-                    var query3 = from c in context.Cjenik
-                                 join s in context.Salon on c.idSalon equals s.idSalon
-                                 join u in context.Usluga on c.idUsluga equals u.idUsluga
+                    var query3 = from c in context.Cjeniks
+                                 join s in context.Salons on c.idSalon equals s.idSalon
+                                 join u in context.Uslugas on c.idUsluga equals u.idUsluga
                                  where u.Naziv == usluga && s.Naziv == salon
-                                 join a in context.Akcija on c.idCjenik equals a.IdCjenik into akcija
+                                 join a in context.Akcijas on c.idCjenik equals a.IdCjenik into akcija
                                  from ak in akcija.DefaultIfEmpty()
                                  select new PopisTermina
                                  {
@@ -144,7 +145,7 @@ namespace msitaric
         {
             using (var context = new PI2230_DBEntities())
             {
-                var query = from s in context.Salon
+                var query = from s in context.Salons
                             where s.Naziv == termin.Salon
                             select s.idSalon;
                 int idSalona = query.First();
@@ -167,7 +168,7 @@ namespace msitaric
         {
             using (var context = new PI2230_DBEntities())
             {
-                var q = from t in context.Termin
+                var q = from t in context.Termins
                         select t;
                 List<Termin> ter = q.ToList();
                 List<PopisTermina> brisanjeSalonUsluga = new List<PopisTermina>();

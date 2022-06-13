@@ -10,13 +10,15 @@ namespace BookfrizApp.Forms
         private List<Salon> Saloni = new List<Salon>();
         private string Usluga;
         private int CijenaOd, CijenaDo;
-        public TrazilicaIspis(List<Salon> saloni,string usluga,int cijenaOd,int cijenaDo,Trazilica trazilica)
+        Klijent Klijent;
+        public TrazilicaIspis(List<Salon> saloni,string usluga,int cijenaOd,int cijenaDo,Trazilica trazilica, Klijent klijent)
         {
             Saloni = saloni;
             Usluga = usluga;
             CijenaOd = cijenaOd;
             CijenaDo = cijenaDo;
             trazilica.Hide();
+            Klijent = klijent;
             InitializeComponent();
         }
         private void btnOdustani_Click(object sender, EventArgs e)
@@ -25,7 +27,7 @@ namespace BookfrizApp.Forms
         }
         private void btnCjenik_Click(object sender, EventArgs e)
         {
-            Cjenik cjenik = new Cjenik(dgvTrazilica.CurrentRow.DataBoundItem as Salon, Usluga, CijenaOd, CijenaDo,this);
+            Cjenik cjenik = new Cjenik(dgvTrazilica.CurrentRow.DataBoundItem as Salon, Usluga, CijenaOd, CijenaDo,this, Klijent);
             cjenik.ShowDialog();
             Hide();
         }

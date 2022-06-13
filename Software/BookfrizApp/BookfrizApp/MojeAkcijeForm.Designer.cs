@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonDodajAkciju = new System.Windows.Forms.Button();
             this.buttonObrisiAkciju = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMojeAkcije)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,6 +73,11 @@
             this.buttonObrisiAkciju.UseVisualStyleBackColor = true;
             this.buttonObrisiAkciju.Click += new System.EventHandler(this.buttonObrisiAkciju_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Matej\\Documents\\PI_Projekt\\Software\\BookfrizApp\\BookfrizApp\\Help\\pregled" +
+    "akcija.htm";
+            // 
             // MojeAkcijeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -82,6 +88,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewMojeAkcije);
             this.Name = "MojeAkcijeForm";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "MojeAkcijeForm";
             this.Load += new System.EventHandler(this.MojeAkcijeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMojeAkcije)).EndInit();
@@ -96,5 +103,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonDodajAkciju;
         private System.Windows.Forms.Button buttonObrisiAkciju;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

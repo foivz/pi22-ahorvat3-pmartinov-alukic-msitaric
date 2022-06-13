@@ -11,9 +11,11 @@ namespace BookfrizApp.Forms
 {
     public partial class Trazilica : Form
     {
-        public Trazilica()
+        Klijent Klijent;
+        public Trazilica(Klijent klijent)
         {
             InitializeComponent();
+            Klijent = klijent;
         }
         private Repozitorij repozitorij = new Repozitorij();
         private void trackCijenaOd_Scroll(object sender, EventArgs e)
@@ -89,7 +91,7 @@ namespace BookfrizApp.Forms
             try
             {
                 List<Salon> saloni = repozitorij.DohvatiPodatke(grad, (float)(Convert.ToDouble(numOcjena.Value)), usluga, trackCijenaOd.Value, trackCijenaDo.Value);
-                TrazilicaIspis trazilicaIspis = new TrazilicaIspis(saloni, usluga, trackCijenaOd.Value, trackCijenaDo.Value,this);
+                TrazilicaIspis trazilicaIspis = new TrazilicaIspis(saloni, usluga, trackCijenaOd.Value, trackCijenaDo.Value,this, Klijent);
                 trazilicaIspis.ShowDialog();
                 
             }

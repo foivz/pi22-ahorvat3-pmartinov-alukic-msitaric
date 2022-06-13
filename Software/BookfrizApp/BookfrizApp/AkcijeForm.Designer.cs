@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxUsluge = new System.Windows.Forms.ComboBox();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAkcije)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,6 +100,11 @@
             this.comboBoxUsluge.Size = new System.Drawing.Size(121, 21);
             this.comboBoxUsluge.TabIndex = 5;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Matej\\Documents\\PI_Projekt\\Software\\BookfrizApp\\BookfrizApp\\Help\\popisak" +
+    "cija.htm";
+            // 
             // AkcijeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,6 +118,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewAkcije);
             this.Name = "AkcijeForm";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "AkcijeForm";
             this.Load += new System.EventHandler(this.AkcijeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAkcije)).EndInit();
@@ -129,5 +136,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBoxUsluge;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

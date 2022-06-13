@@ -36,6 +36,7 @@
             this.textBoxOpis = new System.Windows.Forms.TextBox();
             this.buttonUredi = new System.Windows.Forms.Button();
             this.buttonOdustani = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownOcjena)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,6 +115,11 @@
             this.buttonOdustani.UseVisualStyleBackColor = true;
             this.buttonOdustani.Click += new System.EventHandler(this.buttonOdustani_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Matej\\Documents\\PI_Projekt\\Software\\BookfrizApp\\BookfrizApp\\Help\\urediva" +
+    "njerecenzije.htm";
+            // 
             // UrediRecenzijuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,6 +134,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "UrediRecenzijuForm";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "UrediRecenzijuForm";
             this.Load += new System.EventHandler(this.UrediRecenzijuForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownOcjena)).EndInit();
@@ -146,5 +153,6 @@
         private System.Windows.Forms.TextBox textBoxOpis;
         private System.Windows.Forms.Button buttonUredi;
         private System.Windows.Forms.Button buttonOdustani;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

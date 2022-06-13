@@ -43,7 +43,7 @@ namespace BookfrizApp
 
         private void btnTrazilica_Click(object sender, EventArgs e)
         {
-            Trazilica trazilica = new Trazilica();
+            Trazilica trazilica = new Trazilica(klijent);
             trazilica.ShowDialog();
         }
 
@@ -63,6 +63,24 @@ namespace BookfrizApp
         {
             FormObavijestiKlijenta forma = new FormObavijestiKlijenta(klijent);
             forma.ShowDialog();
+        }
+
+        private void buttonPopisAkcija_Click(object sender, EventArgs e)
+        {
+            AkcijeForm akcijeForm = new AkcijeForm();
+            akcijeForm.ShowDialog();
+        }
+
+        private void buttonNarucivanje_Click(object sender, EventArgs e)
+        {
+            NarucivanjeForm naručivanjeForm = new NarucivanjeForm(klijent.idKlijent, "Svi saloni", "Sve usluge");
+            naručivanjeForm.ShowDialog();
+        }
+
+        private void buttonMojeRecenzije_Click(object sender, EventArgs e)
+        {
+            RecenzijeForm recenzijeForm = new RecenzijeForm(klijent.idKlijent);
+            recenzijeForm.ShowDialog();
         }
     }
 }

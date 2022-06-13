@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblNazivSalona = new System.Windows.Forms.Label();
             this.btnProfilSalona = new System.Windows.Forms.Button();
+            this.buttonPostaviAkcije = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -61,11 +62,22 @@
             this.btnProfilSalona.UseVisualStyleBackColor = true;
             this.btnProfilSalona.Click += new System.EventHandler(this.btnProfilSalona_Click);
             // 
+            // buttonPostaviAkcije
+            // 
+            this.buttonPostaviAkcije.Location = new System.Drawing.Point(39, 217);
+            this.buttonPostaviAkcije.Name = "buttonPostaviAkcije";
+            this.buttonPostaviAkcije.Size = new System.Drawing.Size(75, 37);
+            this.buttonPostaviAkcije.TabIndex = 4;
+            this.buttonPostaviAkcije.Text = "Postavi akcije";
+            this.buttonPostaviAkcije.UseVisualStyleBackColor = true;
+            this.buttonPostaviAkcije.Click += new System.EventHandler(this.buttonPostaviAkcije_Click);
+            // 
             // FormPocetnaVlasnika
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonPostaviAkcije);
             this.Controls.Add(this.btnProfilSalona);
             this.Controls.Add(this.lblNazivSalona);
             this.Controls.Add(this.label1);
@@ -81,5 +93,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNazivSalona;
         private System.Windows.Forms.Button btnProfilSalona;
+        private System.Windows.Forms.Button buttonPostaviAkcije;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace BookfrizApp
 {
-    partial class NaručivanjeForm
+    partial class NarucivanjeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -39,6 +39,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.numericUpDownSati = new System.Windows.Forms.NumericUpDown();
             this.buttonFiltriraj = new System.Windows.Forms.Button();
+            this.buttonOdustani = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaloniUsluge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSati)).BeginInit();
             this.SuspendLayout();
@@ -103,7 +105,7 @@
             // 
             // buttonRezerviraj
             // 
-            this.buttonRezerviraj.Location = new System.Drawing.Point(481, 339);
+            this.buttonRezerviraj.Location = new System.Drawing.Point(580, 332);
             this.buttonRezerviraj.Name = "buttonRezerviraj";
             this.buttonRezerviraj.Size = new System.Drawing.Size(132, 40);
             this.buttonRezerviraj.TabIndex = 7;
@@ -152,11 +154,27 @@
             this.buttonFiltriraj.UseVisualStyleBackColor = true;
             this.buttonFiltriraj.Click += new System.EventHandler(this.buttonFiltriraj_Click);
             // 
-            // NaručivanjeForm
+            // buttonOdustani
+            // 
+            this.buttonOdustani.Location = new System.Drawing.Point(82, 332);
+            this.buttonOdustani.Name = "buttonOdustani";
+            this.buttonOdustani.Size = new System.Drawing.Size(132, 40);
+            this.buttonOdustani.TabIndex = 11;
+            this.buttonOdustani.Text = "Odustani";
+            this.buttonOdustani.UseVisualStyleBackColor = true;
+            this.buttonOdustani.Click += new System.EventHandler(this.buttonOdustani_Click);
+            // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Matej\\Documents\\PI_Projekt\\Software\\BookfrizApp\\BookfrizApp\\Help\\naruciv" +
+    "anje.htm";
+            // 
+            // NarucivanjeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(781, 395);
+            this.Controls.Add(this.buttonOdustani);
             this.Controls.Add(this.buttonFiltriraj);
             this.Controls.Add(this.numericUpDownSati);
             this.Controls.Add(this.label4);
@@ -168,7 +186,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "NaručivanjeForm";
+            this.Name = "NarucivanjeForm";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Naručivanje";
             this.Load += new System.EventHandler(this.Naručivanje_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaloniUsluge)).EndInit();
@@ -191,5 +210,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numericUpDownSati;
         private System.Windows.Forms.Button buttonFiltriraj;
+        private System.Windows.Forms.Button buttonOdustani;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

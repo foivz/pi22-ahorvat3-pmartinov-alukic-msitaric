@@ -32,5 +32,11 @@ namespace BookfrizApp
             FormProfilSalona forma = new FormProfilSalona(salon);
             forma.ShowDialog();
         }
+
+        private void buttonPostaviAkcije_Click(object sender, EventArgs e)
+        {
+            MojeAkcijeForm mojeAkcijeForm = new MojeAkcijeForm();
+            mojeAkcijeForm.ShowDialog();
+        }
     }
 }

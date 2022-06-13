@@ -11,15 +11,17 @@ using msitaric;
 
 namespace BookfrizApp
 {
-    public partial class NaručivanjeForm : Form
+    public partial class NarucivanjeForm : Form
     {
         SaloniManager saloni = new SaloniManager();
         string salon, usluga;
         DateTime datum;
-        int vrijeme;
-        public NaručivanjeForm()
+        int vrijeme, idKlijenta;
+        public NarucivanjeForm(int idklijenta, string uslugaNaziv, string salonNaziv)
         {
             InitializeComponent();
+            salon = salonNaziv;
+            usluga = uslugaNaziv;
         }
 
         private void Naručivanje_Load(object sender, EventArgs e)
@@ -27,15 +29,23 @@ namespace BookfrizApp
             dateTimePicker.Value = DateTime.Now;
             comboBoxSaloni.DataSource = saloni.DohvatiSalone();
             comboBoxUsluge.DataSource = saloni.DohvatiUsluge();
+            
+            comboBoxSaloni.SelectedItem = salon;
+            comboBoxUsluge.SelectedItem = usluga;
+                        
         }
 
         private void buttonRezerviraj_Click(object sender, EventArgs e)
         {
             PopisTermina termin = dataGridViewSaloniUsluge.CurrentRow.DataBoundItem as PopisTermina;
-            //1 zamjeniti sa id korisnika
-            saloni.ObaviRezervaciju(termin, vrijeme, datum, 1);
+            saloni.ObaviRezervaciju(termin, vrijeme, datum, idKlijenta);
             MessageBox.Show("Uspješno rezerviran termin!");
             osvjezi();
+        }
+
+        private void buttonOdustani_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         private void buttonFiltriraj_Click(object sender, EventArgs e)

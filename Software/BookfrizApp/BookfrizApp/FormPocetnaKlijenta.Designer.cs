@@ -35,6 +35,9 @@
             this.btnTrazilica = new System.Windows.Forms.Button();
             this.btnPopisSalona = new System.Windows.Forms.Button();
             this.btnObavijesti = new System.Windows.Forms.Button();
+            this.buttonPopisAkcija = new System.Windows.Forms.Button();
+            this.buttonNarucivanje = new System.Windows.Forms.Button();
+            this.buttonMojeRecenzije = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -67,7 +70,7 @@
             // btnProfil
             // 
             this.btnProfil.Location = new System.Drawing.Point(184, 28);
-            this.btnProfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnProfil.Margin = new System.Windows.Forms.Padding(2);
             this.btnProfil.Name = "btnProfil";
             this.btnProfil.Size = new System.Drawing.Size(77, 41);
             this.btnProfil.TabIndex = 3;
@@ -78,7 +81,7 @@
             // btnTrazilica
             // 
             this.btnTrazilica.Location = new System.Drawing.Point(278, 28);
-            this.btnTrazilica.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTrazilica.Margin = new System.Windows.Forms.Padding(2);
             this.btnTrazilica.Name = "btnTrazilica";
             this.btnTrazilica.Size = new System.Drawing.Size(76, 41);
             this.btnTrazilica.TabIndex = 4;
@@ -89,7 +92,7 @@
             // btnPopisSalona
             // 
             this.btnPopisSalona.Location = new System.Drawing.Point(184, 84);
-            this.btnPopisSalona.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPopisSalona.Margin = new System.Windows.Forms.Padding(2);
             this.btnPopisSalona.Name = "btnPopisSalona";
             this.btnPopisSalona.Size = new System.Drawing.Size(77, 41);
             this.btnPopisSalona.TabIndex = 5;
@@ -108,11 +111,47 @@
             this.btnObavijesti.UseVisualStyleBackColor = true;
             this.btnObavijesti.Click += new System.EventHandler(this.btnObavijesti_Click_1);
             // 
+            // buttonPopisAkcija
+            // 
+            this.buttonPopisAkcija.Location = new System.Drawing.Point(184, 140);
+            this.buttonPopisAkcija.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonPopisAkcija.Name = "buttonPopisAkcija";
+            this.buttonPopisAkcija.Size = new System.Drawing.Size(77, 68);
+            this.buttonPopisAkcija.TabIndex = 7;
+            this.buttonPopisAkcija.Text = "Popis aktualnih akcija";
+            this.buttonPopisAkcija.UseVisualStyleBackColor = true;
+            this.buttonPopisAkcija.Click += new System.EventHandler(this.buttonPopisAkcija_Click);
+            // 
+            // buttonNarucivanje
+            // 
+            this.buttonNarucivanje.Location = new System.Drawing.Point(278, 140);
+            this.buttonNarucivanje.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonNarucivanje.Name = "buttonNarucivanje";
+            this.buttonNarucivanje.Size = new System.Drawing.Size(77, 68);
+            this.buttonNarucivanje.TabIndex = 8;
+            this.buttonNarucivanje.Text = "Naruči se";
+            this.buttonNarucivanje.UseVisualStyleBackColor = true;
+            this.buttonNarucivanje.Click += new System.EventHandler(this.buttonNarucivanje_Click);
+            // 
+            // buttonMojeRecenzije
+            // 
+            this.buttonMojeRecenzije.Location = new System.Drawing.Point(184, 215);
+            this.buttonMojeRecenzije.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonMojeRecenzije.Name = "buttonMojeRecenzije";
+            this.buttonMojeRecenzije.Size = new System.Drawing.Size(170, 37);
+            this.buttonMojeRecenzije.TabIndex = 9;
+            this.buttonMojeRecenzije.Text = "Moje recenzije";
+            this.buttonMojeRecenzije.UseVisualStyleBackColor = true;
+            this.buttonMojeRecenzije.Click += new System.EventHandler(this.buttonMojeRecenzije_Click);
+            // 
             // FormPocetnaKlijenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(416, 271);
+            this.ClientSize = new System.Drawing.Size(416, 294);
+            this.Controls.Add(this.buttonMojeRecenzije);
+            this.Controls.Add(this.buttonNarucivanje);
+            this.Controls.Add(this.buttonPopisAkcija);
             this.Controls.Add(this.btnObavijesti);
             this.Controls.Add(this.btnPopisSalona);
             this.Controls.Add(this.btnTrazilica);
@@ -136,5 +175,8 @@
         private System.Windows.Forms.Button btnTrazilica;
         private System.Windows.Forms.Button btnPopisSalona;
         private System.Windows.Forms.Button btnObavijesti;
+        private System.Windows.Forms.Button buttonPopisAkcija;
+        private System.Windows.Forms.Button buttonNarucivanje;
+        private System.Windows.Forms.Button buttonMojeRecenzije;
     }
 }

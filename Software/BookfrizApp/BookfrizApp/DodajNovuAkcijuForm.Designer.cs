@@ -38,6 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.buttonDodajAkciju = new System.Windows.Forms.Button();
             this.buttonOdustani = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCijena)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,6 +133,11 @@
             this.buttonOdustani.UseVisualStyleBackColor = true;
             this.buttonOdustani.Click += new System.EventHandler(this.buttonOdustani_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Matej\\Documents\\PI_Projekt\\Software\\BookfrizApp\\BookfrizApp\\Help\\dodavan" +
+    "jeakcije.htm";
+            // 
             // DodajNovuAkcijuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -148,6 +154,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxOpis);
             this.Name = "DodajNovuAkcijuForm";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "DodajNovuAkciju";
             this.Load += new System.EventHandler(this.DodajNovuAkcijuForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCijena)).EndInit();
@@ -168,5 +175,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonDodajAkciju;
         private System.Windows.Forms.Button buttonOdustani;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

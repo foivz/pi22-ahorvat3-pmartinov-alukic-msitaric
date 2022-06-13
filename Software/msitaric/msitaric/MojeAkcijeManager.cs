@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BazaPodataka;
 
 namespace msitaric
 {
@@ -12,9 +13,9 @@ namespace msitaric
         {
             using (var context = new PI2230_DBEntities())
             {
-                var query = from a in context.Akcija
-                            join c in context.Cjenik on a.IdCjenik equals c.idCjenik
-                            join s in context.Salon on c.idSalon equals s.idSalon
+                var query = from a in context.Akcijas
+                            join c in context.Cjeniks on a.IdCjenik equals c.idCjenik
+                            join s in context.Salons on c.idSalon equals s.idSalon
                             where s.Naziv == NazivSalona
                             select new MojeAkcije
                             {
@@ -41,8 +42,8 @@ namespace msitaric
         {
             using (var context = new PI2230_DBEntities())
             {
-                var query = from c in context.Cjenik
-                            join u in context.Usluga on c.idUsluga equals u.idUsluga
+                var query = from c in context.Cjeniks
+                            join u in context.Uslugas on c.idUsluga equals u.idUsluga
                             where c.idSalon==idSalona
                             select u;
                 return query.ToList();
@@ -52,7 +53,7 @@ namespace msitaric
         {
             using (var context = new PI2230_DBEntities())
             {
-                var query = from c in context.Cjenik
+                var query = from c in context.Cjeniks
                             where c.idSalon == idSalona && c.idUsluga == usluga.idUsluga
                             select c;
                 List<Cjenik> cjenik = query.ToList();

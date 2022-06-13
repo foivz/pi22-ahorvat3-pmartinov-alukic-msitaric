@@ -30,7 +30,9 @@
         {
             this.dataGridViewRecenzije = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonUrediRecenziju = new System.Windows.Forms.Button();
+            this.buttonNatrag = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRecenzije)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,25 +53,42 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Moje recenzije";
             // 
-            // button1
+            // buttonUrediRecenziju
             // 
-            this.button1.Location = new System.Drawing.Point(255, 299);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 41);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Dodaj/uredi recenziju";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonUrediRecenziju.Location = new System.Drawing.Point(449, 291);
+            this.buttonUrediRecenziju.Name = "buttonUrediRecenziju";
+            this.buttonUrediRecenziju.Size = new System.Drawing.Size(128, 41);
+            this.buttonUrediRecenziju.TabIndex = 2;
+            this.buttonUrediRecenziju.Text = "Dodaj/uredi recenziju";
+            this.buttonUrediRecenziju.UseVisualStyleBackColor = true;
+            this.buttonUrediRecenziju.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonNatrag
+            // 
+            this.buttonNatrag.Location = new System.Drawing.Point(58, 291);
+            this.buttonNatrag.Name = "buttonNatrag";
+            this.buttonNatrag.Size = new System.Drawing.Size(128, 41);
+            this.buttonNatrag.TabIndex = 3;
+            this.buttonNatrag.Text = "Natrag";
+            this.buttonNatrag.UseVisualStyleBackColor = true;
+            this.buttonNatrag.Click += new System.EventHandler(this.buttonNatrag_Click);
+            // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Matej\\Documents\\PI_Projekt\\Software\\BookfrizApp\\BookfrizApp\\Help\\recenzi" +
+    "je.htm";
             // 
             // RecenzijeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(643, 360);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonNatrag);
+            this.Controls.Add(this.buttonUrediRecenziju);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewRecenzije);
             this.Name = "RecenzijeForm";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "RecenzijeForm";
             this.Load += new System.EventHandler(this.RecenzijeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRecenzije)).EndInit();
@@ -82,6 +101,8 @@
 
         private System.Windows.Forms.DataGridView dataGridViewRecenzije;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonUrediRecenziju;
+        private System.Windows.Forms.Button buttonNatrag;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }
