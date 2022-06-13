@@ -52,7 +52,7 @@ namespace BookfrizApp
             azuriraniKlijent.Username = txtKorisnickoIme.Text;
             azuriraniKlijent.Spol = txtSpol.Text;
 
-            baza.AzurirajKlijenta(azuriraniKlijent);
+            baza.AzurirajKlijenta(klijent,azuriraniKlijent);
             MessageBox.Show("Podatci su uspješno spremljeni!");
 
             PrikaziPodatke(azuriraniKlijent);

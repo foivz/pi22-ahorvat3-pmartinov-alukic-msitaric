@@ -28,21 +28,24 @@ namespace BookfrizApp
         private void PrikaziObavijesti()
         {
             Obavijesti obavijest = baza.DohvatiObavijest(klijent.idKlijent);
-            if(obavijest.sve_obavijesti == 1)
+            if (obavijest != null)
             {
-                cbSveObavijesti.Checked = true;
-            }
-            if(obavijest.bez_obavijesti == 1)
-            {
-                cbBezObavijesti.Checked = true;
-            }
-            if(obavijest.obavijesti_jedan_dan_prije == 1)
-            {
-                cbObavijestiJedanDanPrije.Checked = true;
-            }
-            if(obavijest.obavijesti_jedan_sat_prije == 1)
-            {
-                cbObavijestiJedanSatPrije.Checked = true;
+                if (obavijest.sve_obavijesti == 1)
+                {
+                    cbSveObavijesti.Checked = true;
+                }
+                if (obavijest.bez_obavijesti == 1)
+                {
+                    cbBezObavijesti.Checked = true;
+                }
+                if (obavijest.obavijesti_jedan_dan_prije == 1)
+                {
+                    cbObavijestiJedanDanPrije.Checked = true;
+                }
+                if (obavijest.obavijesti_jedan_sat_prije == 1)
+                {
+                    cbObavijestiJedanSatPrije.Checked = true;
+                }
             }
         }
         private void btnSpremi_Click(object sender, EventArgs e)

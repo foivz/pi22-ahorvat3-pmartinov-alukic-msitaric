@@ -82,5 +82,12 @@ namespace BookfrizApp
             RecenzijeForm recenzijeForm = new RecenzijeForm(klijent.idKlijent);
             recenzijeForm.ShowDialog();
         }
+
+        private void btnOdjava_Click(object sender, EventArgs e)
+        {
+            FormPrijava formPrijava = new FormPrijava();
+            //Hide();
+            formPrijava.ShowDialog();
+        }
     }
 }

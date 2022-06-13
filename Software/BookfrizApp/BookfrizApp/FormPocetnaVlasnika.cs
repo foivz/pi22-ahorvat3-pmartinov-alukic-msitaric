@@ -38,5 +38,12 @@ namespace BookfrizApp
             MojeAkcijeForm mojeAkcijeForm = new MojeAkcijeForm();
             mojeAkcijeForm.ShowDialog();
         }
+
+        private void btnOdjava_Click(object sender, EventArgs e)
+        {
+            FormPrijava formPrijava = new FormPrijava();
+            Hide();
+            formPrijava.ShowDialog();
+        }
     }
 }

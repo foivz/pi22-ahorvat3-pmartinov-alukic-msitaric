@@ -38,41 +38,45 @@
             this.buttonPopisAkcija = new System.Windows.Forms.Button();
             this.buttonNarucivanje = new System.Windows.Forms.Button();
             this.buttonMojeRecenzije = new System.Windows.Forms.Button();
+            this.btnOdjava = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 28);
+            this.label1.Location = new System.Drawing.Point(44, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 13);
+            this.label1.Size = new System.Drawing.Size(142, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "POČETNA KLIJENTA";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 65);
+            this.label2.Location = new System.Drawing.Point(44, 80);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 13);
+            this.label2.Size = new System.Drawing.Size(90, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Dobrodošao,";
             // 
             // lblImeKlijenta
             // 
             this.lblImeKlijenta.AutoSize = true;
-            this.lblImeKlijenta.Location = new System.Drawing.Point(107, 65);
+            this.lblImeKlijenta.Location = new System.Drawing.Point(143, 80);
+            this.lblImeKlijenta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblImeKlijenta.Name = "lblImeKlijenta";
-            this.lblImeKlijenta.Size = new System.Drawing.Size(35, 13);
+            this.lblImeKlijenta.Size = new System.Drawing.Size(46, 17);
             this.lblImeKlijenta.TabIndex = 2;
             this.lblImeKlijenta.Text = "label3";
             // 
             // btnProfil
             // 
-            this.btnProfil.Location = new System.Drawing.Point(184, 28);
-            this.btnProfil.Margin = new System.Windows.Forms.Padding(2);
+            this.btnProfil.Location = new System.Drawing.Point(245, 34);
+            this.btnProfil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnProfil.Name = "btnProfil";
-            this.btnProfil.Size = new System.Drawing.Size(77, 41);
+            this.btnProfil.Size = new System.Drawing.Size(103, 50);
             this.btnProfil.TabIndex = 3;
             this.btnProfil.Text = "Moj profil";
             this.btnProfil.UseVisualStyleBackColor = true;
@@ -80,10 +84,10 @@
             // 
             // btnTrazilica
             // 
-            this.btnTrazilica.Location = new System.Drawing.Point(278, 28);
-            this.btnTrazilica.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTrazilica.Location = new System.Drawing.Point(371, 34);
+            this.btnTrazilica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTrazilica.Name = "btnTrazilica";
-            this.btnTrazilica.Size = new System.Drawing.Size(76, 41);
+            this.btnTrazilica.Size = new System.Drawing.Size(101, 50);
             this.btnTrazilica.TabIndex = 4;
             this.btnTrazilica.Text = "Tražilica salona";
             this.btnTrazilica.UseVisualStyleBackColor = true;
@@ -91,10 +95,10 @@
             // 
             // btnPopisSalona
             // 
-            this.btnPopisSalona.Location = new System.Drawing.Point(184, 84);
-            this.btnPopisSalona.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPopisSalona.Location = new System.Drawing.Point(245, 103);
+            this.btnPopisSalona.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPopisSalona.Name = "btnPopisSalona";
-            this.btnPopisSalona.Size = new System.Drawing.Size(77, 41);
+            this.btnPopisSalona.Size = new System.Drawing.Size(103, 50);
             this.btnPopisSalona.TabIndex = 5;
             this.btnPopisSalona.Text = "Popis salona u blizini";
             this.btnPopisSalona.UseVisualStyleBackColor = true;
@@ -102,10 +106,10 @@
             // 
             // btnObavijesti
             // 
-            this.btnObavijesti.Location = new System.Drawing.Point(277, 84);
-            this.btnObavijesti.Margin = new System.Windows.Forms.Padding(2);
+            this.btnObavijesti.Location = new System.Drawing.Point(369, 103);
+            this.btnObavijesti.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnObavijesti.Name = "btnObavijesti";
-            this.btnObavijesti.Size = new System.Drawing.Size(77, 41);
+            this.btnObavijesti.Size = new System.Drawing.Size(103, 50);
             this.btnObavijesti.TabIndex = 6;
             this.btnObavijesti.Text = "Obavijesti";
             this.btnObavijesti.UseVisualStyleBackColor = true;
@@ -113,10 +117,10 @@
             // 
             // buttonPopisAkcija
             // 
-            this.buttonPopisAkcija.Location = new System.Drawing.Point(184, 140);
-            this.buttonPopisAkcija.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonPopisAkcija.Location = new System.Drawing.Point(245, 172);
+            this.buttonPopisAkcija.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonPopisAkcija.Name = "buttonPopisAkcija";
-            this.buttonPopisAkcija.Size = new System.Drawing.Size(77, 68);
+            this.buttonPopisAkcija.Size = new System.Drawing.Size(103, 84);
             this.buttonPopisAkcija.TabIndex = 7;
             this.buttonPopisAkcija.Text = "Popis aktualnih akcija";
             this.buttonPopisAkcija.UseVisualStyleBackColor = true;
@@ -124,10 +128,10 @@
             // 
             // buttonNarucivanje
             // 
-            this.buttonNarucivanje.Location = new System.Drawing.Point(278, 140);
-            this.buttonNarucivanje.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonNarucivanje.Location = new System.Drawing.Point(371, 172);
+            this.buttonNarucivanje.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonNarucivanje.Name = "buttonNarucivanje";
-            this.buttonNarucivanje.Size = new System.Drawing.Size(77, 68);
+            this.buttonNarucivanje.Size = new System.Drawing.Size(103, 84);
             this.buttonNarucivanje.TabIndex = 8;
             this.buttonNarucivanje.Text = "Naruči se";
             this.buttonNarucivanje.UseVisualStyleBackColor = true;
@@ -135,20 +139,31 @@
             // 
             // buttonMojeRecenzije
             // 
-            this.buttonMojeRecenzije.Location = new System.Drawing.Point(184, 215);
-            this.buttonMojeRecenzije.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonMojeRecenzije.Location = new System.Drawing.Point(245, 265);
+            this.buttonMojeRecenzije.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonMojeRecenzije.Name = "buttonMojeRecenzije";
-            this.buttonMojeRecenzije.Size = new System.Drawing.Size(170, 37);
+            this.buttonMojeRecenzije.Size = new System.Drawing.Size(227, 46);
             this.buttonMojeRecenzije.TabIndex = 9;
             this.buttonMojeRecenzije.Text = "Moje recenzije";
             this.buttonMojeRecenzije.UseVisualStyleBackColor = true;
             this.buttonMojeRecenzije.Click += new System.EventHandler(this.buttonMojeRecenzije_Click);
             // 
+            // btnOdjava
+            // 
+            this.btnOdjava.Location = new System.Drawing.Point(47, 117);
+            this.btnOdjava.Name = "btnOdjava";
+            this.btnOdjava.Size = new System.Drawing.Size(142, 65);
+            this.btnOdjava.TabIndex = 10;
+            this.btnOdjava.Text = "Odjavi se";
+            this.btnOdjava.UseVisualStyleBackColor = true;
+            this.btnOdjava.Click += new System.EventHandler(this.btnOdjava_Click);
+            // 
             // FormPocetnaKlijenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(416, 294);
+            this.ClientSize = new System.Drawing.Size(555, 362);
+            this.Controls.Add(this.btnOdjava);
             this.Controls.Add(this.buttonMojeRecenzije);
             this.Controls.Add(this.buttonNarucivanje);
             this.Controls.Add(this.buttonPopisAkcija);
@@ -159,6 +174,7 @@
             this.Controls.Add(this.lblImeKlijenta);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormPocetnaKlijenta";
             this.Text = "Bookfriz";
             this.ResumeLayout(false);
@@ -178,5 +194,6 @@
         private System.Windows.Forms.Button buttonPopisAkcija;
         private System.Windows.Forms.Button buttonNarucivanje;
         private System.Windows.Forms.Button buttonMojeRecenzije;
+        private System.Windows.Forms.Button btnOdjava;
     }
 }

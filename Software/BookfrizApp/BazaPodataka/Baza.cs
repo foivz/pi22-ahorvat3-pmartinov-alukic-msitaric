@@ -102,11 +102,16 @@ namespace BazaPodataka
             return salon;
         }
 
-        public void AzurirajKlijenta (Klijent klijent)
+        public void AzurirajKlijenta (Klijent klijent,Klijent azuriraniKlijent)
         {
             using (var con = new PI2230_DBEntities())
             {
                 con.Klijents.Attach(klijent);
+                klijent.Ime = azuriraniKlijent.Ime;
+                klijent.Prezime = azuriraniKlijent.Prezime;
+                klijent.Email = azuriraniKlijent.Email;
+                klijent.BrojTelefona = azuriraniKlijent.BrojTelefona;
+                klijent.Spol = azuriraniKlijent.Spol;
                 con.SaveChanges();
             }
         }
